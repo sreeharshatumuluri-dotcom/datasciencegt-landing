@@ -10,7 +10,7 @@ import Contact from "./pages/Contact.jsx";
 export default function App() {
   return (
     <BrowserRouter>
-      <div className="min-h-screen bg-[#0b0d12] text-slate-200 antialiased">
+      <div className="min-h-screen bg-[background: #1A1A1A] text-slate-200 antialiased">
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
