@@ -1,5 +1,7 @@
 import React from "react";
-
+import approachImg from "../assets/asset-approach.png"; 
+import approachImg2 from "../assets/2.png";// ✅ imported image
+import approachImg3 from "../assets/3.png";
 export default function Home() {
   return (
     <main className="bg-black min-h-screen">
@@ -58,7 +60,7 @@ function Hero() {
               </button>
             </div>
 
-            {/* Labels (not buttons) — bigger (~+70%) and spanned across */}
+            {/* Labels (not buttons) — bigger and spanned across */}
             <div className="mt-10 w-full max-w-xl">
               <div className="flex items-center justify-between text-2xl">
                 <span className="inline-flex items-center gap-3">
@@ -68,7 +70,6 @@ function Hero() {
                   />
                   <span style={{ color: "#8e4f53" }}>First Slide</span>
                 </span>
-
                 <span className="text-white/70">Second Slide</span>
                 <span className="text-white/70">Third Slide</span>
               </div>
@@ -128,39 +129,54 @@ function About() {
 
         {/* Left → Right → Left features */}
         <div className="mt-14 space-y-16">
+          {/* 1) Image left, text right */}
           <FeatureRow
             flip={false}
             title="Our Approach to Data Engineering"
             text="Like the Gran Turismo standard that inspires our name, we focus on complete performance: from neural architecture to predictive analytics, from raw data to actionable insights."
+            imageSrc={approachImg}
           />
+          {/* 2) Image right, text left */}
           <FeatureRow
             flip={true}
             title="Our Credibility"
             text="For nearly a decade, we’ve supported enterprises with the depth of a global firm and the agility of a boutique team. We design architectures in AWS, Azure, and GCP. We build data pipelines in Python, Spark, and SQL."
-          />
+            imageSrc={approachImg2}
+  />
+          {/* 3) Image left, text right */}
           <FeatureRow
             flip={false}
             title="AI + Analytics"
             text="We enable analytics and AI through platforms like Snowflake, Hadoop, Hive, and BigQuery. Increasingly, we help clients use predictive models, automation, and generative AI to unlock faster decisions and new opportunities."
+            imageSrc={approachImg3}
           />
         </div>
+
       </div>
     </section>
   );
 }
 
-/* -------------- FEATURE ROW (order-only flip) -------------- */
-function FeatureRow({ flip = false, title, text }) {
+/* -------------- FEATURE ROW (uses imageSrc when provided) -------------- */
+function FeatureRow({ flip = false, title, text, imageSrc }) {
   return (
     <div className="grid items-center gap-10 lg:gap-16 lg:grid-cols-2">
       {/* Graphic */}
       <div className={flip ? "lg:order-2" : "lg:order-1"}>
-        <div className="relative aspect-[4/3] rounded-3xl bg-white/5 border border-white/10 backdrop-blur-xl overflow-hidden shadow-xl">
-          <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-white/0" />
-          <div className="absolute -left-10 top-8 h-40 w-40 rounded-2xl bg-gradient-to-br from-cyan-300 to-fuchsia-500 rotate-12 blur-[1px]" />
-          <div className="absolute right-8 bottom-6 h-28 w-28 rounded-full bg-gradient-to-tr from-rose-400 to-amber-300 blur-[0.5px]" />
-          <div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 h-48 w-48 rounded-3xl bg-gradient-to-br from-indigo-400 to-purple-500 rotate-6" />
-        </div>
+        {imageSrc ? (
+          <img
+            src={imageSrc}
+            alt={title}
+            className="w-full max-w-md mx-auto drop-shadow-[0_40px_80px_rgba(0,0,0,0.35)]"
+          />
+        ) : (
+          <div className="relative aspect-[4/3] rounded-3xl bg-white/5 border border-white/10 backdrop-blur-xl overflow-hidden shadow-xl">
+            <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-white/0" />
+            <div className="absolute -left-10 top-8 h-40 w-40 rounded-2xl bg-gradient-to-br from-cyan-300 to-fuchsia-500 rotate-12 blur-[1px]" />
+            <div className="absolute right-8 bottom-6 h-28 w-28 rounded-full bg-gradient-to-tr from-rose-400 to-amber-300 blur-[0.5px]" />
+            <div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 h-48 w-48 rounded-3xl bg-gradient-to-br from-indigo-400 to-purple-500 rotate-6" />
+          </div>
+        )}
       </div>
 
       {/* Text */}
