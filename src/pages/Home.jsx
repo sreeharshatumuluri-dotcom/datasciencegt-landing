@@ -13,11 +13,20 @@ function Hero() {
   return (
     <section className="pt-16 relative">
       <div className="relative h-[64vh] min-h-[460px] w-full overflow-hidden">
-        <img
-          src=""
-          alt="Background"
+        {/* Background video */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
           className="absolute inset-0 h-full w-full object-cover"
-        />
+        >
+          {/* Put your file in /public as hero-bg.mp4 */}
+          <source src="/hero-bg.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+
+        {/* Overlay + angled mask */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80" />
         <svg
           className="absolute -bottom-1 left-0 w-full text-[#0b0d12]"
@@ -27,17 +36,19 @@ function Hero() {
           <polygon fill="currentColor" points="0,10 100,0 100,10" />
         </svg>
 
+        {/* Content */}
         <div className="relative z-10 h-full w-full">
           <div className="mx-auto max-w-7xl h-full px-4 sm:px-6 lg:px-8 flex flex-col justify-center">
-            <p className="uppercase tracking-widest text-xs text-white/70 mb-3">  
-            Since 2015 • Pittsburgh HQ • Cloud + ML + Analytics
+            <p className="uppercase tracking-widest text-xs text-white/70 mb-3">
+              Since 2015 • Pittsburgh HQ • Cloud + ML + Analytics
             </p>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black leading-tight text-white">
               End-to-end data platforms
-            <br />
-              for  <span className="text-white/90">decisive teams</span>
+              <br />
+              for <span className="text-white/90">decisive teams</span>
             </h1>
-            {/* NOTE: ASCII-only paragraph to avoid stray �/? glyphs */}
+
+            {/* ASCII-only paragraph (avoid stray glyphs) */}
             <p className="mt-4 max-w-2xl text-slate-300/90">
               Since 2015, DataScienceGT has been helping organizations turn complex data into clear results. We work at the intersection of data science, engineering, and strategy. Our goal is simple is to deliver solutions that are precise, scalable, and built to last.
             </p>
