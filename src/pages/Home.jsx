@@ -1,10 +1,11 @@
 import React from "react";
-import approachImg from "../assets/asset-approach.png"; 
-import approachImg2 from "../assets/2.png";// ✅ imported image
+import approachImg from "../assets/asset-approach.png";
+import approachImg2 from "../assets/2.png";
 import approachImg3 from "../assets/3.png";
+
 export default function Home() {
   return (
-    <main className="bg-black min-h-screen">
+    <main className="bg-[#1A1A1A] min-h-screen">
       <Hero />
       <About />
     </main>
@@ -14,7 +15,7 @@ export default function Home() {
 /* ---------------- HERO ---------------- */
 function Hero() {
   return (
-    <section className="pt-16 relative">
+    <section className="pt-16 relative bg-[#1A1A1A]">
       <div className="relative h-[64vh] min-h-[460px] w-full overflow-hidden">
         {/* Full-bleed video (place file in /public/hero-bg.mp4) */}
         <video
@@ -84,7 +85,7 @@ function Hero() {
 /* ---------------- ABOUT ---------------- */
 function About() {
   return (
-    <section className="relative py-24 sm:py-28 lg:py-32 bg-black overflow-hidden">
+    <section className="relative py-24 sm:py-28 lg:py-32 bg-[#1A1A1A] overflow-hidden">
       {/* Local keyframes for a gentle top-to-bottom reveal */}
       <style>{`
         @keyframes fadeDown {
@@ -142,7 +143,7 @@ function About() {
             title="Our Credibility"
             text="For nearly a decade, we’ve supported enterprises with the depth of a global firm and the agility of a boutique team. We design architectures in AWS, Azure, and GCP. We build data pipelines in Python, Spark, and SQL."
             imageSrc={approachImg2}
-  />
+          />
           {/* 3) Image left, text right */}
           <FeatureRow
             flip={false}
@@ -151,7 +152,6 @@ function About() {
             imageSrc={approachImg3}
           />
         </div>
-
       </div>
     </section>
   );
