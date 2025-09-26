@@ -1,0 +1,41 @@
+{
+  "meta": { "title": "Home", "bg": "#1A1A1A" },
+  "hero": {
+    "tagline": "Since 2015 • Pittsburgh HQ • Cloud + ML + Analytics",
+    "title_lines": ["End-to-end data platforms", "for decisive teams"],
+    "body": "Since 2015, DataScienceGT has been helping organizations turn complex data into clear results. We work at the intersection of data science, engineering, and strategy. Our goal is simple is to deliver solutions that are precise, scalable, and built to last.",
+    "cta_primary": "Get a proposal",
+    "cta_secondary": "Learn More",
+    "slides": [
+      {"label": "First Slide", "color": "#8e4f53", "active": true},
+      {"label": "Second Slide"},
+      {"label": "Third Slide"}
+    ]
+  },
+  "about": {
+    "watermark": "ABOUT US",
+    "heading": "Who We Are?",
+    "intro": "Since 2015, DataScienceGT has been helping organizations turn complex data into clear results. We work at the intersection of data science, engineering, and strategy to deliver solutions that are precise, scalable, and built to last.",
+    "watermark_gradient": ["#15303b", "#173439", "#3d4850"]
+  },
+  "features": [
+    {
+      "title": "Our Approach to Data Engineering",
+      "points": ["Like the Gran Turismo standard that inspires our name, we focus on complete performance: from neural architecture to predictive analytics, from raw data to actionable insights."],
+      "image": "/assets/asset-approach.png",
+      "flip": false
+    },
+    {
+      "title": "Our Credibility",
+      "points": ["For nearly a decade, we’ve supported enterprises with the depth of a global firm and the agility of a boutique team. We design architectures in AWS, Azure, and GCP. We build data pipelines in Python, Spark, and SQL."],
+      "image": "/assets/2.png",
+      "flip": true
+    },
+    {
+      "title": "AI + Analytics",
+      "points": ["We enable analytics and AI through platforms like Snowflake, Hadoop, Hive, and BigQuery. Increasingly, we help clients use predictive models, automation, and generative AI to unlock faster decisions and new opportunities."],
+      "image": "/assets/3.png",
+      "flip": false
+    }
+  ]
+}

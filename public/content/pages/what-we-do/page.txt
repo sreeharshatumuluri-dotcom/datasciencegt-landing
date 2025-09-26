@@ -1,0 +1,16 @@
+{
+  "meta": { "title": "What We Do", "bg": "#1A1A1A" },
+  "watermark": "OUR WORK",
+  "heading": "Our Work Across Industries",
+  "intro": "We build reliable data platforms and applied AI that turn complex data into clear outcomes. Here are some of the verticals we support and the kinds of results we deliver.",
+  "industries": [
+    {"icon": "/assets/asset-approach.png", "title": "Banking & Finance", "text": "Risk modeling, AML, KYC, fraud detection, and regulatory reporting. Real-time data platforms for trading, treasury, and compliance."},
+    {"icon": "/assets/2.png", "title": "Insurance", "text": "Claims automation, pricing, and loss forecasting. Policy administration analytics with modern data stacks and MLOps."},
+    {"icon": "/assets/3.png", "title": "Social Media & Digital", "text": "Audience analytics, personalization, engagement scoring. Real-time pipelines for content ops and ad platforms."},
+    {"icon": "/assets/asset-approach.png", "title": "E-commerce & Marketplaces", "text": "Demand forecasting, recommendation systems, attribution. Clean rooms, CDPs, and analytics engineering."},
+    {"icon": "/assets/2.png", "title": "Wellness & Consumer", "text": "Member 360, outreach, and retention analytics. Governed lakehouse and predictive models for growth."},
+    {"icon": "/assets/3.png", "title": "Healthcare & Genomics", "text": "Cohort analytics, evidence generation, and secure research workspaces on cloud."},
+    {"icon": "/assets/asset-approach.png", "title": "Telecommunications", "text": "Network performance, churn, and capacity planning. Streaming telemetry → lakehouse for predictive ops."},
+    {"icon": "/assets/2.png", "title": "Retail & Industrial Supply", "text": "Inventory optimization, pricing, and logistics. End-to-end demand/supply modeling with scenarios."}
+  ]
+}
