@@ -1,0 +1,15 @@
+Working with Gopala was an excellent experience. He supported us on projects as well as broader data science initiatives, always bringing a high level of expertise and precision. His detail-oriented approach ensured that both the backend data management and the analytics were not only accurate but also clearly explained. He goes beyond just delivering results; he takes the time to show the process behind the work, which added real value to our team.
+
+- Annerose B.
+
+Gopala came on board to help architect and implement a very large data warehouse migration from on-prem RDBMS to the cloud at a marquee client. His technical leadership was instrumental in delivering the large and complex migration. He showed strength and professionalism throughout, especially when the client disagreed with our architectural recommendations. He helped the client see the rightness of his approach for the ultimate business success. Gopala also intensely mentored many of the client's team members so they can carry the torch forward after the new cloud platform's successful launch.
+
+- Brendan M.
+
+I’ve had the opportunity to work with Gopala for over 6 years and have consistently appreciated his technical expertise and problem-solving skills. He is especially strong in data engineering, AI / ML pipelines, and the processes that support reliable production-grade delivery. Gopala adds real value by building scalable infrastructure and streamlined workflows. His ability to connect technical detail with business needs makes him a dependable and valuable.
+
+- Shagun M.
+ 
+I needed to hire a data scientist to work on a product recommendations engine. Among a dozen prospects, Gopala clearly stood out as the most qualified. He has consistently helped us bring every project to the finish line, while also using his skills and experiences to elevate each team member along the way. His coding, AI / machine learning, and engineering skills are unparalleled and second to none.
+
+- Mark M.
