@@ -1,0 +1,13 @@
+At DATASCIENCEGT, we are the swiss-army-knife of data, its lifecycle, and business use through AI and ML. We have done it all and used a lengthy list of technology tools and cloud services in AWS, Azure and GCP to do these things.
+
+Major areas of our exertise, experience and value:
+
+Data and Business Value Creation - talk here about how we focus like a laser on taking data and turning it into business value, and keeping it ongoing. Blah blah blah.
+
+Data Architecture and Platform Engineering - We can take any data system that is currently in place and help architect, design, engineer and implement a platform that is amenable to sustainable business value and AI development...cloud based...blah blah blah.
+
+Data Analytics and Visualizations - Standard stuff <>
+
+Data Engineering - We design, develop and deploy automated end-to-end pipelines to keep the data from any source flowing into an data science / AI-ready platform for continuous business value delivery and consistency. blah blah blah
+
+AI and ML Modeling and Operationalization - We help build AI and machine learning models, validate the models and operationalize them in production-grade form for continuous retraining, validation and downstream business use....blah blah blah.
