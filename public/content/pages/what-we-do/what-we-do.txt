@@ -6,7 +6,7 @@ Data and Business Value Creation - talk here about how we focus like a laser on 
 
 Data Architecture and Platform Engineering - We can take any data system that is currently in place and help architect, design, engineer and implement a platform that is amenable to sustainable business value and AI development...cloud based...blah blah blah.
 
-Data Analytics and Visualizations - Standard stuff <>
+Data Analytics and Visualizations - Standard stuff <> We can build dashboards that are living, breathing and ongoing. We can dive deep to develop keen insights and non-intuitive decision metrics...blah blah blah
 
 Data Engineering - We design, develop and deploy automated end-to-end pipelines to keep the data from any source flowing into an data science / AI-ready platform for continuous business value delivery and consistency. blah blah blah
 
