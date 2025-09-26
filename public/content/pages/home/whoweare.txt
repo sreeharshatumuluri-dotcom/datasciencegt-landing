@@ -1,0 +1,17 @@
+Who We Are
+
+Data + AI + ML + Analytics
+End-to-end data and AI solutions for decisive teams
+
+ABOUT US
+For over a decade, DATASCIENCEGT has been helping organizations leverage data for AI- and ML-driven business results. We work relentlessly on behalf of our clients to add business value fast. Our technical expertise and business savvy intersect to produce high-impact, lasting solutions fast. The team has experience in the entire end-to-end value chain of data, from platform architecture to engineering data pipelines to building and operationalizing production-scale custom AI models. Work with us, ride with us and benfit your business through us.
+
+Who is Behind DATASCIENCEGT
+The company was created by our founder Gopala Tumuluri. He has over 30 years of experience in the technology industry in numerous roles starting as a software engineer and rising up to lead a 100+ member engineering team to build cloud-based data products and services. Gopala created DATASCIENCEGT over 10 years ago when he pivoted to a hands-on career in the field of data science and decided to work with clients on their diverse, impactful and high-value projects. In his prior professional career, he also worked as a product line owner, marketing leader and business unit head for products and cloud services that generated tens of millions in annual revenue. During this time, he also honed his business skills and insistence on business value add. At DATASCIENCEGT, Gopala brings together his hard-code technical and business skills together to deliver value to the company's clients. Now, he has also built a team and trained them to be laser focused on value delivery through high quality technical work. Gopala holds three masters degress - an MS in computer science from the University of Kentucky, an MBA from Carnegie Mellon University and a Masters degree in data science from the University of California, Berkeley. You can win with him and his team.
+
+Story Behind our Name
+Over 20 years ago, on the cusp of launching a new family of products as part of the product line portfolio Gopala was leading, he received a call from his CEO suggesting (well, insisting) they name the new family GT. Gopala was puzzled and unsure. He had heard of many cars named GT, but did not have immersed knowledge of the history behind the GT. The CEO explained that GT stood for Gran Tourisimo, and that it signified werformance and comfort for the long journey, and that the name was apt for the product line being launched. Since then, he embraced the name for being reflective of his own work and the work done by this new Data Science and AI company. Riding from data to AI with us is like riding the Gran Tourismo - high performance, high comfort and high reliability. All in the name.
+
+The Team
+<Write a paragraph about each of you two>
+
