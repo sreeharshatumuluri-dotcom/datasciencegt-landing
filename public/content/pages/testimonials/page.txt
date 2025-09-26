@@ -1,0 +1,11 @@
+{
+  "meta": { "title": "Testimonials", "bg": "#1A1A1A" },
+  "watermark": "Testimonials",
+  "heading": "What Our Clients Say About Us",
+  "intro": "A few words from teams we’ve partnered with.",
+  "items": [
+    {"quote": "They turned messy data into a production-grade platform. Time-to-insight fell from months to days.", "author": "VP, Data Engineering", "company": "Global Media"},
+    {"quote": "Pragmatic, fast, and high quality. The ML stack they set up is still scaling with us.", "author": "Head of Analytics", "company": "Fintech"},
+    {"quote": "Exactly the right mix of architecture and delivery to move us forward.", "author": "CTO", "company": "Healthcare"}
+  ]
+}

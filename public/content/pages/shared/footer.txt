@@ -1,0 +1,7 @@
+{
+  "cta_title": "TEXT RIDEAGT to (872)332-7221",
+  "cta_subtitle": "For Free Consultation",
+  "phone": "+1(770)330-6474",
+  "email": "Ride@datasciencegt.com",
+  "background": "/footer-bg.jpg"
+}

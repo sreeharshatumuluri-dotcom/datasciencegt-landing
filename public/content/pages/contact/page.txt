@@ -1,0 +1,8 @@
+{
+  "meta": { "title": "Contact", "bg": "#1A1A1A" },
+  "heading": "Let’s build something useful.",
+  "blurb": "Send a note and we’ll get back within one business day.",
+  "email": "hello@datasciencegt.com",
+  "phone": "+1 (770) 330-6474",
+  "cta": "Send Message"
+}
