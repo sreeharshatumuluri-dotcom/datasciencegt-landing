@@ -1,33 +1,25 @@
-Over a decade, DATASCIENCEGT and Gopala have worked with numerous clients on challenging, business critical and high impact data projects. Many of these clients were Fortune 500 and bigger companies. Through these projects, we have seen almost all of it, used an extensive set of technology tools and solutions, and become experts at what we do. We can use this experience and expertise on your behalf now. On this page, we will briefly describe the types of clients we worked with and what some of them say about us.
+Over a decade, DATASCIENCEGT and Gopala have worked with numerous clients on challenging, business-critical, and high-impact data projects. Many of these clients were Fortune 500 and larger companies. Through these projects, we have seen almost all of it, used an extensive set of technology tools and solutions, and become experts at what we do. We can use this experience and expertise on your behalf now. On this page, we will briefly describe the types of clients we worked with and what some of them say about us.
 
 Top 15 Health Care Company:
-
-<UPMC work>
+DATASCIENCEGT designed and implemented a quality control database system for their genomics pipeline processes. This included creating a cloud-based relational database and developing ETL software modules to transform raw data into a structured schema for analytical use. The team also built a feature-rich R Shiny dashboard to provide insights into quality metrics. We also built analytics products to enable personalized medicine, leveraging a vast repository of patient data.
 
 Innovative Patient Revenue Management Company:
-
-<PatientCo>
+As the first data scientist for this company, DATASCIENCEGT transformed their approach to data insights and reporting. We replaced their basic, ad-hoc methods with a streamlined, automated, and statistically robust strategic function.
 
 Top 3 Wireless Company:
-
-<Verizon>
+Our team made extensive use of Hadoop and Spark to develop data analysis and predictive models. We also built a multi-purpose text analytics engine and an accessory product recommendation engine. Additionally, we implemented numerous ETL pipelines using Apache Spark.
 
 Massive Social Media Platform Company:
-
-<Meta>
+DATASCIENCEGT acted as a senior data engineering partner, developing and managing numerous big-data pipelines that control all marketing campaigns. We implemented, tested, and deployed many new features and fixes to large-scale pipelines using Python, Spark, and Presto.
 
 Top Wholesale Industrial Distribution Company:
-
-<Grainger>
+Our team completely rewrote an existing ad-hoc implementation to deliver a highly efficient, fully automated, and easily extensible product recommendation engine to the direct sales organization. We also contributed foundational code for data preparation, modeling, and results delivery for a new e-commerce product recommendation engine.
 
 Top 5 Financial Company:
-
-<us bank>
+DATASCIENCEGT owned the design, architecture, and initial implementation of a machine learning platform. This platform, built with Azure Machine Learning, enabled end-to-end modeling pipelines for multiple teams. We also developed technical solutions to transform and migrate large volumes of data from an on-premise proprietary SAS grid platform to ADLS2 in Azure.
 
 Leading Fitness Brand:
-
-<Weight Watchers>
+We leveraged our strong background in data engineering and analytics to provide extensive insights into consumer behavior and wellness trends. Using our expertise in SQL, R, R Plotly, and NoSQL, we surfaced rich insights from data in Google BigQuery and MongoDB.
 
 Top Personal Care Product Company:
-
-<Kimberly Clark>
+For a new IoT-based commercial restroom management automation system, DATASCIENCEGT re-architected and implemented a highly scalable and robust data platform from scratch. This included designing the database and schema, implementing automated ETL processes, and operationalizing the system in IBM's Bluemix Cloud.
