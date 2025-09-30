@@ -5,6 +5,9 @@ import { EffectCoverflow, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
+import logo from "../assets/logo.svg";
+
+
 
 // Replace with your real images (or use /public and set bg: "/team/xxx.jpg")
 import madhavImg from "../assets/team/madhav.jpg";
@@ -18,7 +21,7 @@ const TEAM = [
     name: "Madhav Tumuluri",
     title: "Manager, Business & Strategy",
     desc:
-      "Finance & strategy specialist (MBA in Finance). Leads payroll, client management systems, and internal automations so the team stays laser-focused on client value.",
+      "Madhav is a vital member of the DATASCIENCEGT team, specializing in finance and strategy. As an experienced financial analyst and an MBA in Finance, he brings a sharp business focus to every project. Madhav is responsible for key internal operations, including payroll and client management systems. He also leads internal automation efforts, ensuring the company runs efficiently so the team can stay laser-focused on delivering value to our clients. Madhav’s unique combination of business acumen and technical skill makes him an invaluable asset to our company and our partners.",
   },
   {
     // 2nd (default centered)
@@ -34,7 +37,7 @@ const TEAM = [
     name: "Sree Harsha Tumuluri",
     title: "Developer, Software & AI",
     desc:
-      "Building scalable software and AI features across the stack. (Full bio coming soon.)",
+      "Harsha is an integral member of the DATASCIENCEGT team, bringing strong technical expertise in software engineering, data systems, and AI/ML solutions. He focuses on designing scalable architectures, building reliable platforms, and ensuring smooth integration across cloud and data environments. In addition to his engineering contributions, Harsha supports client delivery by aligning technical solutions with business goals, ensuring projects create measurable impact. His blend of technical skill and problem-solving mindset adds significant value to both the company and its clients.",
   },
 ];
 
@@ -57,9 +60,9 @@ export default function TeamCarousel() {
         }
         /* Pagination bullets */
         .team-swiper .swiper-pagination-bullet {
-          background: #696969; transition: all .5s ease 0s; border-radius: 8px;
+          background:rgba(59, 130, 246, 0.35); transition: all .5s ease 0s; border-radius: 8px;
         }
-        .team-swiper .swiper-pagination-bullet-active { background: #ffc107; width: 30px; }
+        .team-swiper .swiper-pagination-bullet-active { background:#3b82f6; width: 30px; }
       `}</style>
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -67,37 +70,38 @@ export default function TeamCarousel() {
         <p className="mt-2 text-center text-slate-300">The people behind DATASCIENCEGT</p>
 
         <Swiper
-          modules={[EffectCoverflow, Pagination, Autoplay]}
-          className="team-swiper !pb-12"
-          effect="coverflow"
-          centeredSlides
-          grabCursor
-          slidesPerView="auto"
-          initialSlide={1}               // start on Gopala (second)
-          loop
-          loopAdditionalSlides={TEAM.length}
-          autoplay={{
-            delay: 8000,                 // 8s
-            disableOnInteraction: false,
-            pauseOnMouseEnter: false,
-            waitForTransition: true,
-          }}
-          speed={900}
-          coverflowEffect={{
-            rotate: 50,
-            stretch: 0,
-            depth: 200,
-            modifier: 1,
-            slideShadows: true,
-          }}
-          pagination={{ clickable: true }}
+        modules={[EffectCoverflow, Pagination, Autoplay]}
+        className="team-swiper !pb-12"
+        effect="coverflow"
+        centeredSlides
+        grabCursor
+        slidesPerView="auto"
+        initialSlide={2}               // start on Gopala (second)
+        loop
+        loopAdditionalSlides={TEAM.length}
+        autoplay={{
+        delay: 0,                    // 🔁 continuous (no waiting between slides)
+        disableOnInteraction: false,
+        pauseOnMouseEnter: false,
+        waitForTransition: true,
+        }}
+        speed={8000}                  // 🐢 slow, smooth drift (~20s per slide shift)
+        coverflowEffect={{
+         rotate: 50,
+         stretch: 0,
+         depth: 200,
+         modifier: 1,
+         slideShadows: true,
+        }}
+        pagination={{ clickable: true }}
         >
-          {TEAM.map((m, i) => (
-            <SwiperSlide key={i}>
-              <Slide m={m} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
+        {TEAM.map((m, i) => (
+        <SwiperSlide key={i}>
+      <Slide m={m} />
+    </SwiperSlide>
+  ))}
+</Swiper>
+
       </div>
     </section>
   );

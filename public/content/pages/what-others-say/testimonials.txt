@@ -19,3 +19,7 @@ I needed to hire a data scientist to work on a product recommendations engine. A
 As a client delivery lead on two major projects Gopala was the technical lead on, I had always felt comfortable and confident knowing we were in good hands. There was never a doubt about meeting deadlines with high quality results. After the projects were completed, I called Gopala a "proven lead," and strongly recommend him for any new data-centered project.
 
 - Sajith S.
+
+I had the pleasure of working with Gopala on an insurance company project where he led the architecture stream. He designed a Snowflake-based architecture that was both robust and forward-looking, covering all aspects from cloud and security to data architecture. His designs were brilliant, ensuring no angle was overlooked. Beyond his technical expertise, Gopala demonstrated excellent leadership skills, guiding the team with clarity and confidence.
+
+- Borja O M
