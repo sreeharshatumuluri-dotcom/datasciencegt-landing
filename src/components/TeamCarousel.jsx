@@ -5,9 +5,6 @@ import { EffectCoverflow, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
-import logo from "../assets/logo.svg";
-
-
 
 // Replace with your real images (or use /public and set bg: "/team/xxx.jpg")
 import madhavImg from "../assets/team/madhav.jpg";
