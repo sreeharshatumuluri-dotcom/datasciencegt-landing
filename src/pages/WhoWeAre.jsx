@@ -1,9 +1,11 @@
 import React from "react";
 import approachImg from "../assets/asset-approach.png";
 import approachImg2 from "../assets/2.png";
-import approachImg3 from "../assets/3.png";
+import TeamCarousel from "../components/TeamCarousel";
+import heroImg from "../assets/hero.png";
 
-export default function Home() {
+
+export default function WhoWeAre() {
   return (
     <main className="bg-[#1A1A1A] min-h-screen">
       <Hero />
@@ -13,55 +15,50 @@ export default function Home() {
 }
 
 /* ---------------- HERO ---------------- */
+
+
 function Hero() {
   return (
     <section className="pt-16 relative bg-[#1A1A1A]">
       <div className="relative h-[64vh] min-h-[460px] w-full overflow-hidden">
-        {/* Full-bleed video (place file in /public/hero-bg.mp4) */}
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
+        {/* Brightened image */}
+        <img
+          src={heroImg}
+          alt="DataScienceGT hero"
           className="absolute inset-0 h-full w-full object-cover"
-        >
-          <source src="/hero-bg.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+          style={{ filter: "brightness(1.12) contrast(1.04) saturate(1.05)" }}
+          loading="eager"
+          decoding="async"
+        />
 
-        {/* Overlay for readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80" />
+        {/* Lighter overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-transparent" />
 
         {/* Content */}
         <div className="relative z-10 h-full w-full">
           <div className="mx-auto max-w-7xl h-full px-4 sm:px-6 lg:px-8 flex flex-col justify-center">
-            <p className="uppercase tracking-widest text-xs text-white/70 mb-3">
-              Since 2015 • Pittsburgh HQ • Cloud + ML + Analytics
+            <p className="uppercase tracking-widest text-xs text-white/80 drop-shadow mb-3">
+              Since 2015 • Chicago IL • Data + AI + ML + Analytics
             </p>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black leading-tight text-white">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black leading-tight text-white drop-shadow">
               End-to-end data platforms
               <br />
-              for <span className="text-white/90">decisive teams</span>
+              for <span className="text-white/95">decisive teams</span>
             </h1>
 
-            <p className="mt-4 max-w-2xl text-slate-300/90">
-              Since 2015, DataScienceGT has been helping organizations turn
-              complex data into clear results. We work at the intersection of
-              data science, engineering, and strategy. Our goal is simple is to
-              deliver solutions that are precise, scalable, and built to last.
-            </p>
+            {/* removed the descriptive paragraph */}
 
             <div className="mt-6 flex items-center gap-3">
               <button className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-rose-500 to-orange-400 text-white font-medium shadow-lg shadow-rose-500/25">
-                Get a proposal
+                Ride With US
               </button>
-              <button className="px-5 py-2.5 rounded-xl bg-transparent border border-white/20 text-white hover:bg-white/10">
+              <button className="px-5 py-2.5 rounded-xl bg-transparent border border-white/30 text-white hover:bg-white/10">
                 Learn More
               </button>
             </div>
 
-            {/* Labels (not buttons) — bigger and spanned across */}
+            {/* Labels */}
             <div className="mt-10 w-full max-w-xl">
               <div className="flex items-center justify-between text-2xl">
                 <span className="inline-flex items-center gap-3">
@@ -69,18 +66,21 @@ function Hero() {
                     className="h-3 w-3 rounded-full"
                     style={{ backgroundColor: "#8e4f53" }}
                   />
-                  <span style={{ color: "#8e4f53" }}>First Slide</span>
+                  <span style={{ color: "#8e4f53" }}>Slide 1</span>
                 </span>
-                <span className="text-white/70">Second Slide</span>
-                <span className="text-white/70">Third Slide</span>
+                <span className="text-white/70">Slide 2</span>
+                <span className="text-white/70">Slide 3</span>
               </div>
             </div>
+            {/* /Labels */}
           </div>
         </div>
       </div>
     </section>
   );
 }
+
+
 
 /* ---------------- ABOUT ---------------- */
 function About() {
@@ -95,8 +95,7 @@ function About() {
       `}</style>
 
       {/* Soft blobs behind everything */}
-      <GradientBlob className="-left-24 top-24 z-0 opacity-30" size={400} from="#7dd3fc" to="#a78bfa" />
-      <GradientBlob className="right-0 top-64 z-0 opacity-20" size={320} from="#fb7185" to="#f59e0b" />
+      
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Watermark occupies layout space, so H2 sits right beneath */}
@@ -121,10 +120,14 @@ function About() {
         <div className="mt-6 text-center">
           <h2 className="text-2xl sm:text-3xl font-extrabold text-white">Who We Are?</h2>
           <p className="mt-4 max-w-3xl mx-auto text-slate-300">
-            Since 2015, DataScienceGT has been helping organizations turn
-            complex data into clear results. We work at the intersection of data
-            science, engineering, and strategy to deliver solutions that are
-            precise, scalable, and built to last.
+            For over a decade, DATASCIENCEGT has been helping organizations leverage data for
+             AI- and ML-driven business results. We work relentlessly on behalf of our clients 
+             to add business value fast. Our technical expertise and business savvy intersect 
+             to produce high-impact, lasting solutions fast. The team has experience in the 
+             entire end-to-end value chain of data, from platform architecture to engineering 
+             data pipelines to building and operationalizing production-scale custom AI models. 
+             Work with us, ride with us, and benefit your business through us.
+
           </p>
         </div>
 
@@ -133,24 +136,49 @@ function About() {
           {/* 1) Image left, text right */}
           <FeatureRow
             flip={false}
-            title="Our Approach to Data Engineering"
-            text="Like the Gran Turismo standard that inspires our name, we focus on complete performance: from neural architecture to predictive analytics, from raw data to actionable insights."
+            title="Who is Behind DATASCIENCEGT?"
+            text="The company was created by our founder, Gopala Tumuluri. He has over 30 years of experience 
+            in the technology industry in numerous roles, starting as a software engineer and rising up to lead 
+            a 100+ member engineering team to build cloud-based data products and services. Gopala created 
+            DATASCIENCEGT over 10 years ago when he pivoted to a hands-on career in the field of data science 
+            and decided to work with clients on their diverse, impactful, and high-value projects. In his prior
+             professional career, he also worked as a product line owner, marketing leader, and business unit 
+             head for products and cloud services that generated tens of millions in annual revenue. During 
+             this time, he also honed his business skills and insistence on business value add. At DATASCIENCEGT, 
+             Gopala brings together his hard-coded technical and business skills to deliver value to the company's 
+             clients. Now, he has also built a team and trained them to be laser-focused on value delivery through 
+             high-quality technical work. Gopala holds three master's degrees - an MS in computer science from the 
+             University of Kentucky, an MBA from Carnegie Mellon University, and a Master's degree in data science 
+             from the University of California, Berkeley. You can win with him and his team."
             imageSrc={approachImg}
           />
           {/* 2) Image right, text left */}
           <FeatureRow
             flip={true}
-            title="Our Credibility"
-            text="For nearly a decade, we’ve supported enterprises with the depth of a global firm and the agility of a boutique team. We design architectures in AWS, Azure, and GCP. We build data pipelines in Python, Spark, and SQL."
+            title="Story Behind Our Name"
+            text={
+            <>
+                  Over 20 years ago, on the cusp of launching a new family of products as part of the product 
+                  line portfolio Gopala was leading, he received a call from his CEO suggesting (well, insisting) 
+                  they name the new family GT. Gopala was puzzled and unsure. He had heard of many cars named GT, but
+                  did not have immersed knowledge of the history behind the GT. The CEO explained that GT stood for{" "}
+            <a
+              href="https://en.wikipedia.org/wiki/Gran_Turismo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline decoration-dotted hover:text-rose-300"
+            >
+            Gran Tourismo
+            </a>
+              , and that it signified performance and comfort for the long journey, and that the name was apt for the
+              product line being launched. Since then, he embraced the name for being reflective of his own work and the work
+              done by this new Data Science and AI company. Riding from data to AI with us is like riding the Gran Tourismo —
+              high performance, high comfort, and high reliability. All in the name.
+          </>
+            }
             imageSrc={approachImg2}
-          />
-          {/* 3) Image left, text right */}
-          <FeatureRow
-            flip={false}
-            title="AI + Analytics"
-            text="We enable analytics and AI through platforms like Snowflake, Hadoop, Hive, and BigQuery. Increasingly, we help clients use predictive models, automation, and generative AI to unlock faster decisions and new opportunities."
-            imageSrc={approachImg3}
-          />
+          />   
+          <TeamCarousel />       
         </div>
       </div>
     </section>
@@ -159,6 +187,9 @@ function About() {
 
 /* -------------- FEATURE ROW (uses imageSrc when provided) -------------- */
 function FeatureRow({ flip = false, title, text, imageSrc }) {
+  // Accept either a single string or an array of strings for multi-paragraph copy
+  const paragraphs = Array.isArray(text) ? text : [text];
+
   return (
     <div className="grid items-center gap-10 lg:gap-16 lg:grid-cols-2">
       {/* Graphic */}
@@ -182,15 +213,19 @@ function FeatureRow({ flip = false, title, text, imageSrc }) {
       {/* Text */}
       <div className={flip ? "lg:order-1" : "lg:order-2"}>
         <h3 className="text-xl sm:text-2xl font-bold text-white">{title}</h3>
+
+        {/* Single render (no duplication) */}
         <ul className="mt-4 space-y-3">
-          {[text, text].map((p, i) => (
+          {paragraphs.map((p, i) => (
             <li key={i} className="flex gap-3">
               <span className="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-300 ring-1 ring-emerald-400/30">
                 <svg viewBox="0 0 24 24" className="h-3.5 w-3.5">
                   <path fill="currentColor" d="M9 16.2l-3.5-3.5L4 14.2 9 19l11-11-1.4-1.4z" />
                 </svg>
               </span>
-              <p className="text-slate-300/95 leading-relaxed">{p}</p>
+              <p className="text-slate-300/95 leading-relaxed">
+                {p}
+              </p>
             </li>
           ))}
         </ul>
@@ -199,14 +234,5 @@ function FeatureRow({ flip = false, title, text, imageSrc }) {
   );
 }
 
+
 /* ---------------- UTIL ---------------- */
-function GradientBlob({ className = "", size = 320, from = "#7dd3fc", to = "#a78bfa" }) {
-  const style = {
-    width: `${size}px`,
-    height: `${size}px`,
-    background: `conic-gradient(from 180deg at 50% 50%, ${from}, ${to}, ${from})`,
-    filter: "blur(60px)",
-    opacity: 0.25,
-  };
-  return <div style={style} className={`pointer-events-none absolute rounded-full ${className}`} />;
-}

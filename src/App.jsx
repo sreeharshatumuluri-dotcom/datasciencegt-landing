@@ -2,10 +2,11 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar.jsx";
 import Footer from "./components/Footer.jsx";
-import Home from "./pages/Home.jsx";
+import Home from "./pages/WhoWeAre.jsx";
 import WhatWeDo from "./pages/WhatWeDo.jsx";
 import Testimonials from "./pages/Testimonials.jsx";
 import Contact from "./pages/Contact.jsx";
+import WhoWeAre from "./pages/WhoWeAre.jsx";
 
 export default function App() {
   return (
@@ -13,7 +14,7 @@ export default function App() {
       <div className="min-h-screen bg-[background: #1A1A1A] text-slate-200 antialiased">
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<WhoWeAre />} />
           <Route path="/what-we-do" element={<WhatWeDo />} />
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/contact" element={<Contact />} />

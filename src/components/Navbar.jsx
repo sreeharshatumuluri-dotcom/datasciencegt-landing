@@ -1,6 +1,7 @@
 // src/components/Navbar.jsx
 import React, { useState, useEffect } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
+import Logo from "../assets/logo.svg"; // <-- final SVG logo
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -11,7 +12,7 @@ export default function Navbar() {
   }, [pathname]);
 
   const nav = [
-    { to: "/", label: "Home" },
+    { to: "/", label: "Who We Are" },
     { to: "/what-we-do", label: "What We Do?" },
     { to: "/testimonials", label: "Testimonials" },
     { to: "/contact", label: "Contact" },
@@ -20,29 +21,15 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 inset-x-0 z-50 bg-[#1A1A1A]/95 backdrop-blur supports-[backdrop-filter]:bg-[#1A1A1A]/80 border-b border-white/5">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-        {/* Logo + Wordmark */}
-        <Link to="/" className="flex items-center gap-2">
+        {/* Brand: big logo only */}
+        <Link to="/" className="flex items-center" aria-label="DataScienceGT Home">
           <img
-            src="/logo-gt.svg"
+            src={Logo}
             alt="DataScienceGT logo"
-            className="h-32 w-auto block"
+            className="block h-36 w-auto sm:h-42 md:h-48" // 3x larger
             loading="eager"
             decoding="async"
           />
-          {/* Wordmark is now visible on mobile, compact & non-wrapping */}
-          <span
-            className={[
-              "font-semibold tracking-wide inline-block",
-              // compact size on mobile, scales up on larger screens
-              "text-xs sm:text-sm md:text-base",
-              // prevent wrapping & keep room for the hamburger
-              "whitespace-nowrap overflow-hidden text-ellipsis",
-              // limit width on small screens so it doesn't push the toggle
-              "max-w-[45vw] sm:max-w-none",
-            ].join(" ")}
-          >
-            DATASCIENCE<span className="text-cyan-400">GT</span>
-          </span>
         </Link>
 
         {/* Desktop nav */}
