@@ -1,18 +1,39 @@
-# DataScienceGT — Dark Landing Page (React + Vite + Tailwind)
+# DataScienceGT Landing Page
 
-## Run locally
+This is the landing site for DataScienceGT, built with **React + Vite + Tailwind CSS**.
+
+## Pages & Content Management
+
+- **Who We Are**  
+  - The content is **hardcoded** inside `src/pages/Home.jsx`.  
+  - To change text or layout, edit the JSX directly.
+
+- **What We Do?**  
+  - Content is loaded dynamically from a text file.  
+  - Edit the file at:
+    ```
+    public/content/pages/what-we-do/page.txt
+    ```
+  - Changes will be picked up automatically without touching React code.
+
+- **Testimonials**  
+  - Content is also loaded dynamically from a text file.  
+  - Edit the file at:
+    ```
+    public/content/what-others-say/testimonial.txt
+    ```
+  - The site will render whatever testimonials are defined there.
+
+- **Contact**  
+  - Currently static (hardcoded) or minimal — update JSX directly until externalized.
+
+## Tech Stack
+- React 18
+- Vite
+- Tailwind CSS
+- React Router DOM
+
+## Development
 ```bash
-# 1) Unzip, then inside the project folder:
 npm install
-
-# 2) Start dev server
 npm run dev
-```
-
-Open the printed local URL (usually http://localhost:5173) in your browser.
-
-## Build for production
-```bash
-npm run build
-npm run preview
-```
