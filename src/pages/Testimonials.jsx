@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import defaultPhoto from "../assets/austin-distel-jpHw8ndwJ_Q-unsplash.jpg";
-import heroPhoto from "../assets/Group 28.png";
+import defaultPhoto from "../assets/GT1.jpg";
+import heroPhoto from "../assets/radission-us-_XeQ8XEWb4Q-unsplash 1.png";
 import TestimonialsCarousel from "../components/TestimonialsCarousel";
 
 import img1 from "../assets/3.png";

@@ -10,7 +10,7 @@ export default function Footer() {
           <div className="relative h-[560px] w-full">
             {/* Background image */}
             <img
-              src="/footer-bg.jpg"
+              src="src/assets/footer-bg.png"
               alt="Consultation banner"
               className="absolute inset-0 h-full w-full object-cover"
             />
@@ -56,12 +56,33 @@ export default function Footer() {
 
       {/* ===== Thin site footer ===== */}
       <div className="border-t border-white/10">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-14 flex flex-col sm:flex-row items-center justify-between text-sm text-white/60">
-          <span> ©  {new Date().getFullYear()}2025 DATASCIENCEGT. All rights reserved</span>
-          <div className="flex items-center gap-6 mt-2 sm:mt-0">
-            <a href="/WhoWeAre" className="hover:text-white">Who We Are</a>
-            <a href="/what-we-do" className="hover:text-white">What We Do</a>
-            <a href="/testimonials" className="hover:text-white">What Others Say</a>
+        <div
+          className="
+            mx-auto max-w-7xl 
+            px-4 sm:px-6 lg:px-8 
+            py-4 sm:py-0 
+            text-sm 
+            flex flex-col sm:flex-row items-center justify-between
+            space-y-2 sm:space-y-0
+            text-white/70
+          "
+        >
+          {/* Brighter copyright on mobile & desktop */}
+          <span className="text-white/85 sm:text-white/80">
+            © {new Date().getFullYear()} DATASCIENCEGT. All rights reserved
+          </span>
+
+          {/* Links with comfy touch targets on mobile */}
+          <div className="flex items-center gap-3 sm:gap-6 mt-1 sm:mt-0">
+            <a href="/WhoWeAre" className="hover:text-white px-2 py-1 rounded sm:px-0 sm:py-0">
+              Who We Are
+            </a>
+            <a href="/what-we-do" className="hover:text-white px-2 py-1 rounded sm:px-0 sm:py-0">
+              What We Do
+            </a>
+            <a href="/testimonials" className="hover:text-white px-2 py-1 rounded sm:px-0 sm:py-0">
+              What Others Say
+            </a>
           </div>
         </div>
       </div>
