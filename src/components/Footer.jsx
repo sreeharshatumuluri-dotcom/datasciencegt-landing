@@ -1,20 +1,21 @@
+// src/components/Footer.jsx
 import React from "react";
+import footerBg from "../assets/footer-bg.png"; // ✅ import the asset
 
 export default function Footer() {
   return (
     <footer className="bg-[#1A1A1A]">
       {/* ===== Full-bleed CTA with 10px gutters and rounded corners ===== */}
       <section className="relative w-screen">
-        {/* 10px side margins (gutters) + rounded container */}
         <div className="mx-[10px]">
           <div className="relative h-[560px] w-full">
             {/* Background image */}
             <img
-              src="src/assets/footer-bg.png"
+              src={footerBg}                       // ✅ use imported path
               alt="Consultation banner"
               className="absolute inset-0 h-full w-full object-cover"
             />
-            {/* Overlays for contrast */}
+            {/* Overlays */}
             <div className="absolute inset-0 bg-black/35" />
             <div className="absolute inset-0 bg-[radial-gradient(60%_70%_at_25%_35%,rgba(0,0,0,0.45),rgba(0,0,0,0))]" />
 
@@ -35,7 +36,6 @@ export default function Footer() {
                     For a Free Consultation or email us
                   </p>
 
-                  {/* Action chips */}
                   <div className="mt-8 flex flex-wrap items-center gap-4">
                     <a
                       href="mailto:ride@datasciencegt.com"
@@ -56,33 +56,14 @@ export default function Footer() {
 
       {/* ===== Thin site footer ===== */}
       <div className="border-t border-white/10">
-        <div
-          className="
-            mx-auto max-w-7xl 
-            px-4 sm:px-6 lg:px-8 
-            py-4 sm:py-0 
-            text-sm 
-            flex flex-col sm:flex-row items-center justify-between
-            space-y-2 sm:space-y-0
-            text-white/70
-          "
-        >
-          {/* Brighter copyright on mobile & desktop */}
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4 sm:py-0 text-sm flex flex-col sm:flex-row items-center justify-between space-y-2 sm:space-y-0 text-white/70">
           <span className="text-white/85 sm:text-white/80">
             © {new Date().getFullYear()} DATASCIENCEGT. All rights reserved
           </span>
-
-          {/* Links with comfy touch targets on mobile */}
           <div className="flex items-center gap-3 sm:gap-6 mt-1 sm:mt-0">
-            <a href="/WhoWeAre" className="hover:text-white px-2 py-1 rounded sm:px-0 sm:py-0">
-              Who We Are
-            </a>
-            <a href="/what-we-do" className="hover:text-white px-2 py-1 rounded sm:px-0 sm:py-0">
-              What We Do
-            </a>
-            <a href="/testimonials" className="hover:text-white px-2 py-1 rounded sm:px-0 sm:py-0">
-              What Others Say
-            </a>
+            <a href="/WhoWeAre" className="hover:text-white px-2 py-1 rounded sm:px-0 sm:py-0">Who We Are</a>
+            <a href="/what-we-do" className="hover:text-white px-2 py-1 rounded sm:px-0 sm:py-0">What We Do</a>
+            <a href="/testimonials" className="hover:text-white px-2 py-1 rounded sm:px-0 sm:py-0">What Others Say</a>
           </div>
         </div>
       </div>
