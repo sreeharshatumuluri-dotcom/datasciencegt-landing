@@ -17,5 +17,5 @@ Data is the lifeblood of a modern business. We design, develop, and deploy autom
 AI and ML Modeling and Operationalization
 We help build AI and machine learning models, validate them, and operationalize them in production-grade form for continuous retraining, validation, and downstream business use. Our expertise covers every step, from developing the model to deploying it for real-world applications. We have built models that generate real business value, including product recommendation engines, text analytics engines, and even a live cryptocurrency trading bot.
 
-Generative AI and LLMs
+Generative AI and LLMs, AI Agents
 At DataScienceGT, we harness Generative AI to transform how businesses operate. From RAG pipelines and multimodal systems to enterprise-ready LLM deployments on AWS, Azure, and GCP, we build scalable, reliable, and business-focused GenAI solutions that deliver measurable impact.

@@ -5,7 +5,6 @@ import Footer from "./components/Footer.jsx";
 import Home from "./pages/WhoWeAre.jsx";
 import WhatWeDo from "./pages/WhatWeDo.jsx";
 import Testimonials from "./pages/Testimonials.jsx";
-import Contact from "./pages/Contact.jsx";
 import WhoWeAre from "./pages/WhoWeAre.jsx";
 
 export default function App() {
@@ -17,7 +16,6 @@ export default function App() {
           <Route path="/" element={<WhoWeAre />} />
           <Route path="/what-we-do" element={<WhatWeDo />} />
           <Route path="/testimonials" element={<Testimonials />} />
-          <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer />
       </div>

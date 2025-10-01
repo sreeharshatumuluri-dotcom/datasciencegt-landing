@@ -156,11 +156,7 @@ export default function WhatWeDo() {
           </span>
 
           <div className="relative z-[1]">
-            {data.eyebrow && (
-              <p className="text-[#52C1C4] font-semibold tracking-wide uppercase text-xs sm:text-sm">
-                {data.eyebrow}
-              </p>
-            )}
+            
             <h1 className="mt-3 text-2xl sm:text-3xl md:text-5xl font-bold text-white">
               {data.title}
             </h1>

@@ -14,8 +14,8 @@ export default function Navbar() {
   const nav = [
     { to: "/", label: "Who We Are" },
     { to: "/what-we-do", label: "What We Do?" },
-    { to: "/testimonials", label: "Testimonials" },
-    { to: "/contact", label: "Contact" },
+    { to: "/testimonials", label: "What Others Say" },
+    
   ];
 
   return (

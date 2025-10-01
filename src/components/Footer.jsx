@@ -4,9 +4,9 @@ export default function Footer() {
   return (
     <footer className="bg-[#1A1A1A]">
       {/* ===== Full-bleed CTA with 10px gutters and rounded corners ===== */}
-      <section className="relative w-screen  ">
+      <section className="relative w-screen">
         {/* 10px side margins (gutters) + rounded container */}
-        <div className="mx-[10px]  ">
+        <div className="mx-[10px]">
           <div className="relative h-[560px] w-full">
             {/* Background image */}
             <img
@@ -32,17 +32,11 @@ export default function Footer() {
                   </h3>
 
                   <p className="mt-3 text-2xl sm:text-3xl font-semibold text-white/90">
-                    For Free Consultation
+                    For Free Consultation or email us @
                   </p>
 
                   {/* Action chips */}
                   <div className="mt-8 flex flex-wrap items-center gap-4">
-                    <a
-                      href="tel:+17703306474"
-                      className="inline-flex items-center gap-2 rounded-xl bg-white text-black px-4 py-2 font-medium shadow-sm hover:bg-white/90 transition"
-                    >
-                      +1(770)330-6474
-                    </a>
                     <a
                       href="mailto:Ride@datasciencegt.com"
                       className="inline-flex items-center gap-2 rounded-xl border border-white/30 bg-white/10 text-white px-4 py-2 font-medium hover:bg-white/20 transition"

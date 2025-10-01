@@ -3,7 +3,7 @@ import approachImg from "../assets/asset-approach.png";
 import approachImg2 from "../assets/2.png";
 import TeamCarousel from "../components/TeamCarousel";
 import heroImg from "../assets/hero.png";
-import swissArmyImg from "../assets/swissarmy.png"; // ⬅️ NEW
+
 
 export default function WhoWeAre() {
   return (
@@ -31,32 +31,23 @@ function Hero() {
         <div className="relative z-10 h-full w-full">
           <div className="mx-auto max-w-7xl h-full px-4 sm:px-6 lg:px-8 flex flex-col justify-center">
             <p className="uppercase tracking-widest text-xs text-white/80 drop-shadow mb-3">
-              Since 2015 • Chicago IL • Data + AI + ML + Analytics
+              Since 2015 • Data + AI + ML + Analytics
             </p>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black leading-tight text-white drop-shadow">
-              End-to-end data platforms
+              End-to-end data and AI solutions
               <br />
               for <span className="text-white/95">decisive teams</span>
             </h1>
-            <div className="mt-6 flex items-center gap-3">
-              <button className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-rose-500 to-orange-400 text-white font-medium shadow-lg shadow-rose-500/25">
-                Ride With US
-              </button>
-              <button className="px-5 py-2.5 rounded-xl bg-transparent border border-white/30 text-white hover:bg-white/10">
-                Learn More
-              </button>
-            </div>
-            {/* Labels */}
-            <div className="mt-10 w-full max-w-xl">
-              <div className="flex items-center justify-between text-2xl">
-                <span className="inline-flex items-center gap-3">
-                  <span className="h-3 w-3 rounded-full" style={{ backgroundColor: "#8e4f53" }} />
-                  <span style={{ color: "#8e4f53" }}>Slide 1</span>
-                </span>
-                <span className="text-white/70">Slide 2</span>
-                <span className="text-white/70">Slide 3</span>
-              </div>
-            </div>
+  <div className="mt-6 flex items-center gap-3">
+  <a
+    href="mailto:Ride@datasciencedgt.com"
+    className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-rose-500 to-orange-400 text-white font-medium shadow-lg shadow-rose-500/25"
+    role="button"
+  >
+    Ride With US
+  </a>
+</div>
+
           </div>
         </div>
       </div>
@@ -133,7 +124,7 @@ function About() {
                 they name the new family GT. Gopala was puzzled and unsure. He had heard of many cars named GT, but
                 did not have immersed knowledge of the history behind the GT. The CEO explained that GT stood for{" "}
                 <a
-                  href="https://en.wikipedia.org/wiki/Gran_Turismo"
+                  href="https://en.wikipedia.org/wiki/Grand_tourer"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="underline decoration-dotted hover:text-rose-300"
@@ -148,11 +139,7 @@ function About() {
             }
             imageSrc={approachImg2}
           />
-
-          <TeamCarousel />
-
-          {/* ---------- SWISS ARMY BANNER (NEW) ---------- */}
-          <SwissArmyBanner />
+          <TeamCarousel />          
         </div>
       </div>
     </section>
@@ -201,65 +188,4 @@ function FeatureRow({ flip = false, title, text, imageSrc }) {
   );
 }
 
-/* -------------- SWISS ARMY BANNER -------------- */
-/* -------------- SWISS ARMY BANNER (UPDATED) -------------- */
-function SwissArmyBanner() {
-  return (
-    <section className="relative mt-8 rounded-3xl overflow-hidden border border-white/10">
-      {/* Brighter background image */}
-      <img
-        src={swissArmyImg}
-        alt="Swiss Army Knife metaphor for our data capabilities"
-        className="w-full h-[60vh] min-h-[420px] object-cover"
-        loading="lazy"
-        decoding="async"
-        // brighter, slightly more saturated for pop
-        style={{ filter: "brightness(1.15) contrast(1.03) saturate(1.08)" }}
-      />
-
-      {/* Lighter overlay for readability without dimming too much */}
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.28)_0%,rgba(0,0,0,0.22)_30%,rgba(0,0,0,0.14)_60%,rgba(0,0,0,0.08)_100%)]" />
-
-      {/* Watermark with SAME effect as ABOUT US */}
-      <div className="pointer-events-none absolute inset-x-0 top-6 sm:top-10 flex justify-center">
-        <div
-          className="
-            text-[80px] sm:text-[120px] lg:text-[180px]
-            font-black tracking-[0.08em] select-none leading-none
-            text-transparent bg-clip-text
-            bg-[linear-gradient(to_bottom,#15303b_0%,#173439_50%,#3d4850_100%)]
-          "
-          style={{
-            animation: "fadeDown 700ms ease-out both",
-            textShadow: "0 0 24px rgba(23,52,58,0.35)",
-          }}
-        >
-          OUR WORK
-        </div>
-      </div>
-
-      {/* Content */}
-      <div className="absolute inset-0 flex items-center">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
-          <h3 className="text-white font-extrabold text-3xl sm:text-4xl drop-shadow">
-            What We Do?
-          </h3>
-
-          {/* Slider affordance */}
-          <div className="mt-4 flex items-center justify-center gap-2 text-white/80">
-            <span className="h-2 w-2 rounded-full bg-white/50" />
-            <span className="h-2 w-10 rounded-full bg-white" />
-          </div>
-
-          <p className="mt-6 mx-auto max-w-4xl text-lg sm:text-xl text-white/95 leading-relaxed drop-shadow">
-            Think of us as the Swiss Army Knife for data. From data architecture to engineering,
-            from analytics&nbsp; to predictive modeling, from generative AI to automation, we cover the full
-            spectrum. What sets us&nbsp; apart is how we bring the right tools together to address your challenge
-            and deliver results that last.
-          </p>
-        </div>
-      </div>
-    </section>
-  );
-}
 
