@@ -24,9 +24,9 @@ const TEAM = [
     // 2nd (default centered)
     bg: gopalaImg,
     name: "Gopala Tumuluri",
-    title: "Founder & Principal",
+    title: "Technology and Business Lead",
     desc:
-      "Hands-on leader combining deep tech with business value delivery. Focus areas: data platforms, AI/ML strategy, and end-to-end execution.",
+      "Gopala is passionate about solving human and business problems through data, leveraging emerging data science and AI technologies. Before founding DATASCIENCEGT in 2015, Gopala led, shaped, and expanded technology products in numerous mid-sized and startup companies for over 20 years. He defined, developed, marketed, and grew highly differentiated and profitable products in global markets. In his personal life, Gopala is a dad of three sons. He maintains a deep commitment to fitness through exercise and a whole-foods-based, vegetarian diet. He currently divides his time between Pittsburgh and Chicago.",
   },
   {
     // 3rd
