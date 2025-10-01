@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import HeroImg from "../assets/Group 28.png";
+import HeroImg from "../assets/whatwedo.png";
 
 
 import img1 from "../assets/3.png";
@@ -142,8 +142,8 @@ export default function WhatWeDo() {
         <img
           src={HeroImg}
           alt="What We Do hero"
-          className="block w-full h-auto select-none"
-          style={{ filter: "none" }}
+          className="block w-full h-[600px] select-none"
+          style={{ filter: "brightness(1.18) contrast(1.06) saturate(1.08)" }}
         />
       </section>
 
