@@ -180,16 +180,21 @@ export default function Testimonials() {
   return (
     <main className="min-h-screen text-white" style={{ background: data.bg }}>
       {/* Spacer for fixed navbar */}
-      <div className="h-[64px] md:h-[80px]" aria-hidden="true" />
+      
 
       {/* Hero */}
-      <section className="relative m-0 p-0">
-        <img
-          src={heroPhoto}
-          alt="Testimonials cover"
-          className="block w-full h-[220px] md:h-[307px] object-cover"
-        />
-      </section>
+      {/* Hero (full width & height, directly below navbar) */}
+<section className="relative w-full h-[60vh] min-h-[300px] bg-[#0b0b0b]">
+  <img
+    src={heroPhoto}
+    alt="DatascienceGT — office collaboration"
+    className="absolute inset-0 w-full h-full object-cover"
+    loading="eager"
+    decoding="async"
+    style={{ filter: "brightness(1.05) contrast(1.02)" }}
+  />
+</section>
+
 
       {/* ===== TESTIMONIALS ===== */}
       <section className="px-5 md:px-10 lg:px-16 py-6 md:py-8">
