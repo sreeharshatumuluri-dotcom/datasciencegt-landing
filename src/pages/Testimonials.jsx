@@ -32,7 +32,7 @@ async function loadPageMeta() {
 
     return {
       heading: json.heading ?? "What Our Clients Say About Us",
-      intro: "", 
+      intro: "",
       bg: json.meta?.bg || "#0b0b0b",
     };
   } catch {
@@ -170,7 +170,9 @@ export default function Testimonials() {
     };
   }, []);
 
-  const FIXED_HEADING =
+  // Singular heading
+  const HEADING_TITLE = "Affirmation";
+  const HEADING_SUBHEAD =
     "The success of DATASCIENCEGT is built on a foundation of trust and expertise. These testimonials reflect the experience of working with our company.";
 
   const imageForIndex = (idx) => gallery[idx % gallery.length] || FallbackImg;
@@ -192,8 +194,29 @@ export default function Testimonials() {
       {/* ===== TESTIMONIALS ===== */}
       <section className="px-5 md:px-10 lg:px-16 py-6 md:py-8">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-semibold text-white/90">{FIXED_HEADING}</h2>
-          {data.intro && <p className="text-white/70 mt-3 max-w-2xl">{data.intro}</p>}
+          {/* Subtle gradient heading */}
+          <h2
+            className="font-black tracking-[0.08em] leading-none  bg-clip-text
+                       text-[32px] sm:text-[44px] lg:text-[52px]
+                       bg-[linear-gradient(180deg,#8b9aa3_0%,#6a7a82_50%,#aebbc2_100%)]"
+            style={{
+              WebkitTextFillColor: "transparent",
+              textShadow: "0 0 8px rgba(124,146,155,0.15)",
+            }}
+          >
+            {HEADING_TITLE}
+          </h2>
+
+          {/* Subhead */}
+          <p className="mt-3 text-sm md:text-base leading-7 text-white/80 max-w-3xl">
+            {HEADING_SUBHEAD}
+          </p>
+
+          {data.intro && (
+            <p className="text-white/70 mt-3 max-w-2xl text-sm md:text-base">
+              {data.intro}
+            </p>
+          )}
         </div>
       </section>
 
@@ -205,7 +228,7 @@ export default function Testimonials() {
         </div>
       </section>
 
-      {/* ===== WHO WE WORKED WITH  ===== */}
+      {/* ===== WHO WE WORKED WITH ===== */}
       <section className="mx-auto max-w-6xl px-4 sm:px-6 mt-6 sm:mt-8">
         <div className="relative h-[120px] sm:h-[180px] lg:h-[220px] flex items-center justify-center">
           <span
@@ -222,7 +245,7 @@ export default function Testimonials() {
         </div>
       </section>
 
-      {/* Intro paragraph BELOW the backdrop */}
+      {/* Intro paragraph BELOW */}
       {who.intro && (
         <section className="mx-auto max-w-6xl px-4 sm:px-6 -mt-2 mb-8">
           <p className="text-base sm:text-lg leading-7 text-slate-300 whitespace-pre-line relative z-10">
@@ -244,7 +267,6 @@ export default function Testimonials() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {who.items.map((card, idx) => (
               <div key={idx} className="w-full md:w-[515px] h-auto md:h-[541px] flex flex-col">
-                {/* Per-title image — LEFT */}
                 <div className="flex items-start justify-start mb-4">
                   <img
                     src={imageForIndex(idx)}
@@ -256,8 +278,6 @@ export default function Testimonials() {
                     }}
                   />
                 </div>
-
-                {/* Title + dot + body */}
                 <div className="flex-1">
                   <div className="flex items-start gap-2">
                     <span className="mt-2 h-2 w-2 sm:h-2.5 sm:w-2.5 rounded-full bg-[#52C1C4] shrink-0" />

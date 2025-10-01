@@ -32,7 +32,7 @@ export default function Footer() {
                   </h3>
 
                   <p className="mt-3 text-2xl sm:text-3xl font-semibold text-white/90">
-                    For Free Consultation or email us
+                    For a Free Consultation or email us
                   </p>
 
                   {/* Action chips */}
