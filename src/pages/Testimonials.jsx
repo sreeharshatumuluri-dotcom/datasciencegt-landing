@@ -1,4 +1,3 @@
-// src/pages/Testimonials.jsx
 import React, { useEffect, useState } from "react";
 import defaultPhoto from "../assets/austin-distel-jpHw8ndwJ_Q-unsplash.jpg";
 import heroPhoto from "../assets/Group 28.png";
@@ -25,7 +24,6 @@ function firstSentence(q = "") {
   return s.slice(0, 120).replace(/\s+/g, " ").trim();
 }
 
-/* ---------- Page meta (unchanged) ---------- */
 async function loadPageMeta() {
   try {
     const res = await fetch("/content/pages/what-others-say/page.txt", { cache: "no-store" });
@@ -42,8 +40,6 @@ async function loadPageMeta() {
   }
 }
 
-
-/* ---------- Testimonials parser (unchanged) ---------- */
 function parseTestimonials(txt) {
   const lines = (txt || "")
     .replace(/\r\n?/g, "\n")
@@ -96,13 +92,11 @@ async function loadTestimonials() {
   };
 }
 
-/* ---------- Who We Worked With parser (unchanged) ---------- */
 function parseWhoWeWorkedWith(txt) {
   const rawLines = splitLines(txt);
   const lines = rawLines.map((l) => l.replace(/\u00A0/g, " ").trim());
   const N = lines.length;
 
-  // Intro paragraph
   let i = 0;
   const introBuf = [];
   while (i < N && lines[i] !== "") {
@@ -195,7 +189,7 @@ export default function Testimonials() {
         />
       </section>
 
-      {/* ===== TESTIMONIALS (moved up) ===== */}
+      {/* ===== TESTIMONIALS ===== */}
       <section className="px-5 md:px-10 lg:px-16 py-6 md:py-8">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-semibold text-white/90">{FIXED_HEADING}</h2>
@@ -204,16 +198,14 @@ export default function Testimonials() {
       </section>
 
       <section className="px-3 md:px-6 lg:px-10 pb-10 md:pb-16">
-        <div className="relative mx-auto max-w-[1100px]">
-          {/* background ornament kept behind carousel */}
-
+        <div className="relative mx-auto max-w-[1100px] overflow-hidden">
           <div className="relative z-10">
             <TestimonialsCarousel items={data.items || []} showTitle={false} />
           </div>
         </div>
       </section>
 
-      {/* ===== WHO WE WORKED WITH (now below testimonials) ===== */}
+      {/* ===== WHO WE WORKED WITH  ===== */}
       <section className="mx-auto max-w-6xl px-4 sm:px-6 mt-6 sm:mt-8">
         <div className="relative h-[120px] sm:h-[180px] lg:h-[220px] flex items-center justify-center">
           <span
@@ -274,7 +266,7 @@ export default function Testimonials() {
                     </h3>
                   </div>
                   {card.body && (
-                    <p className="mt-2 text-sm sm:text-[14px] leading-6 text-slate-400 whitespace-pre-line">
+                    <p className="mt-2 text-sm sm:text[14px] leading-6 text-slate-400 whitespace-pre-line">
                       {card.body}
                     </p>
                   )}

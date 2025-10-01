@@ -23,7 +23,7 @@ export default function Footer() {
               <div className="mx-auto max-w-7xl h-full px-4 sm:px-6 lg:px-8 flex items-center">
                 <div className="max-w-3xl text-white">
                   <p className="uppercase tracking-[0.2em] text-xs text-white/70 mb-3">
-                    Since 2015 • Data • Cloud • AI • Analytics
+                    Since 2015 • Data • AI • ML • Analytics
                   </p>
 
                   <h3 className="text-3xl sm:text-4xl md:text-5xl font-black leading-tight">
@@ -32,7 +32,7 @@ export default function Footer() {
                   </h3>
 
                   <p className="mt-3 text-2xl sm:text-3xl font-semibold text-white/90">
-                    For Free Consultation or email us to
+                    For Free Consultation or email us
                   </p>
 
                   {/* Action chips */}

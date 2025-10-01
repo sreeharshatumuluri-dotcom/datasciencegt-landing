@@ -1,19 +1,13 @@
 // src/components/TestimonialsCarousel.jsx
 import React, { useId, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
+import { Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
-import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import defaultPhoto from "../assets/austin-distel-jpHw8ndwJ_Q-unsplash.jpg";
 
-/**
- * items: Array<{ quote: string, author?: string, title?: string, photo?: string }>
- * options:
- *  - showTitle: boolean
- */
 export default function TestimonialsCarousel({ items = [], showTitle = true }) {
   const [expandedIdx, setExpandedIdx] = useState(null);
   const uid = useId().replace(/[:]/g, "");
@@ -34,53 +28,36 @@ export default function TestimonialsCarousel({ items = [], showTitle = true }) {
 
   const closeModal = () => setExpandedIdx(null);
 
-  // Responsive coverflow tuning
-  const coverflowSmall = { rotate: 6, stretch: 0, depth: 80, modifier: 1, slideShadows: false };
-  const coverflowLarge = { rotate: 12, stretch: 0, depth: 140, modifier: 1, slideShadows: false };
-
   return (
-    <div className="w-full relative">
-      {/* Left/Right nav buttons — bigger on mobile for easier tapping */}
+    <div className="w-full relative overflow-hidden">
+      {/* Left/Right nav buttons */}
       <button
-        className={`${prevCls} group absolute -left-1 sm:left-0 top-1/2 -translate-y-1/2 z-20
-                    inline-flex items-center justify-center h-12 w-12 sm:h-10 sm:w-10 rounded-full
-                    bg-white/15 hover:bg-white/25 border border-white/20 backdrop-blur
-                    transition`}
+        className={`${prevCls} group absolute -left-1 sm:left-0 top-1/2 -translate-y-1/2 z-20 inline-flex items-center justify-center h-12 w-12 sm:h-10 sm:w-10 rounded-full bg-white/15 hover:bg-white/25 border border-white/20 backdrop-blur transition`}
         aria-label="Previous testimonial"
         type="button"
       >
         <ChevronLeft />
       </button>
       <button
-        className={`${nextCls} group absolute -right-1 sm:right-0 top-1/2 -translate-y-1/2 z-20
-                    inline-flex items-center justify-center h-12 w-12 sm:h-10 sm:w-10 rounded-full
-                    bg-white/15 hover:bg-white/25 border border-white/20 backdrop-blur
-                    transition`}
+        className={`${nextCls} group absolute -right-1 sm:right-0 top-1/2 -translate-y-1/2 z-20 inline-flex items-center justify-center h-12 w-12 sm:h-10 sm:w-10 rounded-full bg-white/15 hover:bg-white/25 border border-white/20 backdrop-blur transition`}
         aria-label="Next testimonial"
         type="button"
       >
         <ChevronRight />
       </button>
 
+      {/* One slide visible; no peeking */}
       <Swiper
-        modules={[EffectCoverflow, Pagination, Navigation]}
+        modules={[Pagination, Navigation]}
         className="testimonials-swiper !pb-12"
-        effect="coverflow"
-        centeredSlides
+        slidesPerView={1}
+        centeredSlides={false}
         grabCursor
-        slidesPerView="auto"
         initialSlide={0}
         loop
         loopAdditionalSlides={DATA.length}
         speed={600}
-        // Subtle effect on phones; fuller effect on >=640px
-        coverflowEffect={coverflowSmall}
-        onResize={(swiper) => {
-          const isLarge = swiper.width >= 640;
-          // @ts-ignore - Swiper allows updating params at runtime
-          swiper.params.coverflowEffect = isLarge ? coverflowLarge : coverflowSmall;
-          swiper.update();
-        }}
+        spaceBetween={0}
         pagination={{ clickable: true }}
         navigation={{ prevEl: `.${prevCls}`, nextEl: `.${nextCls}` }}
       >
@@ -98,14 +75,22 @@ export default function TestimonialsCarousel({ items = [], showTitle = true }) {
         ))}
       </Swiper>
 
-      {/* Responsive slide widths */}
-      <style>{`
-        .testimonials-swiper .t-slide { width: 92vw; }
-        @media (min-width: 640px) { .testimonials-swiper .t-slide { width: 640px; } }
-        @media (min-width: 1024px) { .testimonials-swiper .t-slide { width: 880px; } }
-      `}</style>
+<style>{`
+  /* No peeking */
+  .testimonials-swiper { overflow: hidden; }
+  .testimonials-swiper .swiper-slide { width: 100% !important; z-index: 0; }
+  .testimonials-swiper .swiper-slide:not(.swiper-slide-active) {
+    opacity: 0;
+    visibility: hidden;
+  }
+  .testimonials-swiper .swiper-slide.swiper-slide-active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+  }
+`}</style>
 
-      {/* Modal for expanded testimonial */}
+
       {expandedIdx !== null ? (
         <Modal onClose={closeModal}>
           <ExpandedTestimonial item={DATA[expandedIdx]} showTitle={showTitle} onClose={closeModal} />
@@ -160,14 +145,12 @@ function TestimonialCard({ item, showTitle, compactMasked = false }) {
   );
 }
 
-/* ---------- Expanded View in Modal ---------- */
 function ExpandedTestimonial({ item, showTitle, onClose }) {
   const { quote, author, title, photo } = item;
   const first = title || (quote?.split(".")[0] || "").trim();
 
   return (
     <div className="relative w-full max-w-[95vw] sm:max-w-3xl bg-neutral-900 text-white rounded-2xl border border-white/10 shadow-2xl overflow-hidden">
-      {/* Close */}
       <button
         type="button"
         onClick={onClose}
@@ -195,19 +178,10 @@ function ExpandedTestimonial({ item, showTitle, onClose }) {
   );
 }
 
-/* ---------- Generic Modal Shell ---------- */
 function Modal({ children, onClose }) {
   return (
-    <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4"
-      role="dialog"
-      aria-modal="true"
-    >
-      <div
-        className="absolute inset-0 bg-black/70 backdrop-blur-sm"
-        onClick={onClose}
-        aria-hidden="true"
-      />
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4" role="dialog" aria-modal="true">
+      <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" onClick={onClose} aria-hidden="true" />
       <div className="relative z-10 max-h-[90vh] overflow-auto">{children}</div>
     </div>
   );
