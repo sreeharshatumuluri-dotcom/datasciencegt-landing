@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import HeroImg from "../assets/Group 28.png";
 
-// ⬇️ Replace with your actual images
+
 import img1 from "../assets/3.png";
 import img2 from "../assets/asset-approach.png";
 import img3 from "../assets/2.png";
@@ -21,7 +21,7 @@ function splitLines(txt) {
 
 function parseFrontMatter(lines) {
   let eyebrow = "Our Work";
-  let title = "Areas of our expertise, experience, and what value we can add?";
+  let title = "Expertise, Experience and Value We Add";
   let subtitle = "";
   let idx = 0;
 
@@ -134,29 +134,40 @@ export default function WhatWeDo() {
 
   return (
     <main className="relative pt-16 pb-24">
-      {/* Hero */}
-      <section className="w-full opacity-0 translate-y-6 transition-all duration-700 ease-out" data-animate>
-        <img src={HeroImg} alt="What We Do hero" className="block w-full h-auto select-none" />
+      {/* Hero (no filters/blur) */}
+      <section
+        className="w-full opacity-0 translate-y-6 transition-all duration-700 ease-out"
+        data-animate
+      >
+        <img
+          src={HeroImg}
+          alt="What We Do hero"
+          className="block w-full h-auto select-none"
+          style={{ filter: "none" }}
+        />
       </section>
 
       {/* Content */}
       <section className="mx-auto max-w-6xl px-4 sm:px-6 mt-10 sm:mt-12">
         {/* Heading */}
-        <div className="relative text-center mb-12 sm:mb-16 opacity-0 translate-y-6 transition-all duration-700 ease-out" data-animate>
+        <div
+          className="relative text-center mb-12 sm:mb-16 opacity-0 translate-y-6 transition-all duration-700 ease-out overflow-visible py-10 sm:py-12"
+          data-animate
+        >
           <span
             aria-hidden="true"
             className="pointer-events-none select-none absolute inset-0 flex items-center justify-center
                        font-black tracking-[0.08em] uppercase leading-none
                        text-transparent bg-clip-text
-                       text-[60px] sm:text-[100px] lg:text-[160px]
-                       bg-[linear-gradient(to_bottom,#15303b_0%,#173439_50%,#3d4850_100%)]"
-            style={{ WebkitTextFillColor: "transparent", textShadow: "0 0 24px rgba(23,52,58,0.35)" }}
+                       text-[52px] sm:text-[96px] lg:text-[148px]
+                       bg-[linear-gradient(to_bottom,#1f2937_0%,#23313a_60%,#3d4850_100%)]"
+            /* removed text shadow to kill blur */
+            style={{ WebkitTextFillColor: "transparent" }}
           >
             OUR WORK
           </span>
 
           <div className="relative z-[1]">
-            
             <h1 className="mt-3 text-2xl sm:text-3xl md:text-5xl font-bold text-white">
               {data.title}
             </h1>
@@ -184,6 +195,7 @@ export default function WhatWeDo() {
                   alt={card.title}
                   className="w-[120px] h-[120px] sm:w-[160px] sm:h-[160px] md:w-[180px] md:h-[180px] object-contain"
                   onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = FallbackImg; }}
+                  style={{ filter: "none" }}
                 />
               </div>
 

@@ -3,7 +3,7 @@ Over a decade, DATASCIENCEGT and Gopala have worked with numerous clients on cha
 Top 15 Health Care Company:
 DATASCIENCEGT designed and implemented a quality control database system for their genomics pipeline processes. This included creating a cloud-based relational database and developing ETL software modules to transform raw data into a structured schema for analytical use. The team also built a feature-rich R Shiny dashboard to provide insights into quality metrics. We also built analytics products to enable personalized medicine, leveraging a vast repository of patient data.
 
-Innovative Patient Revenue Management Company:
+Patient Revenue Management Company:
 As the first data scientist for this company, DATASCIENCEGT transformed their approach to data insights and reporting. We replaced their basic, ad-hoc methods with a streamlined, automated, and statistically robust strategic function.
 
 Top 3 Wireless Company:

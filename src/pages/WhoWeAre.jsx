@@ -34,9 +34,9 @@ function Hero() {
               Since 2015 • Data + AI + ML + Analytics
             </p>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black leading-tight text-white drop-shadow">
-              End-to-end data and AI solutions
+              End-to-End Data & AI Solutions
               <br />
-              for <span className="text-white/95">decisive teams</span>
+              for <span className="text-white/95">for Decisive Teams</span>
             </h1>
   <div className="mt-6 flex items-center gap-3">
   <a
@@ -44,7 +44,7 @@ function Hero() {
     className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-rose-500 to-orange-400 text-white font-medium shadow-lg shadow-rose-500/25"
     role="button"
   >
-    Ride With US
+    Ride with US
   </a>
 </div>
 

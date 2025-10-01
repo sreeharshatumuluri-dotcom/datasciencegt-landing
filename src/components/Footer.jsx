@@ -32,16 +32,16 @@ export default function Footer() {
                   </h3>
 
                   <p className="mt-3 text-2xl sm:text-3xl font-semibold text-white/90">
-                    For Free Consultation or email us @
+                    For Free Consultation or email us to
                   </p>
 
                   {/* Action chips */}
                   <div className="mt-8 flex flex-wrap items-center gap-4">
                     <a
-                      href="mailto:Ride@datasciencegt.com"
+                      href="mailto:ride@datasciencegt.com"
                       className="inline-flex items-center gap-2 rounded-xl border border-white/30 bg-white/10 text-white px-4 py-2 font-medium hover:bg-white/20 transition"
                     >
-                      Ride@datasciencegt.com
+                      ride@datasciencegt.com
                     </a>
                   </div>
                 </div>
@@ -57,11 +57,11 @@ export default function Footer() {
       {/* ===== Thin site footer ===== */}
       <div className="border-t border-white/10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-14 flex flex-col sm:flex-row items-center justify-between text-sm text-white/60">
-          <span>© {new Date().getFullYear()} DataScienceGT. All rights reserved.</span>
+          <span> ©  {new Date().getFullYear()}2025 DATASCIENCEGT. All rights reserved</span>
           <div className="flex items-center gap-6 mt-2 sm:mt-0">
-            <a href="/what-we-do" className="hover:text-white">What We Do?</a>
-            <a href="/testimonials" className="hover:text-white">Testimonials</a>
-            <a href="/contact" className="hover:text-white">Contact</a>
+            <a href="/WhoWeAre" className="hover:text-white">Who We Are</a>
+            <a href="/what-we-do" className="hover:text-white">What We Do</a>
+            <a href="/testimonials" className="hover:text-white">What Others Say</a>
           </div>
         </div>
       </div>

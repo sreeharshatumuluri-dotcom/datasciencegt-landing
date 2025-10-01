@@ -1,8 +1,7 @@
 // src/pages/Testimonials.jsx
 import React, { useEffect, useState } from "react";
 import defaultPhoto from "../assets/austin-distel-jpHw8ndwJ_Q-unsplash.jpg";
-import heroPhoto from "../assets/testimonials.png";
-import ornamentImg from "../assets/Ornament81.png";
+import heroPhoto from "../assets/Group 28.png";
 import TestimonialsCarousel from "../components/TestimonialsCarousel";
 
 import img1 from "../assets/3.png";
@@ -32,15 +31,17 @@ async function loadPageMeta() {
     const res = await fetch("/content/pages/what-others-say/page.txt", { cache: "no-store" });
     if (!res.ok) throw new Error();
     const json = await res.json();
+
     return {
       heading: json.heading ?? "What Our Clients Say About Us",
-      intro: json.intro ?? "",
+      intro: "", 
       bg: json.meta?.bg || "#0b0b0b",
     };
   } catch {
     return { heading: "What Our Clients Say About Us", intro: "", bg: "#0b0b0b" };
   }
 }
+
 
 /* ---------- Testimonials parser (unchanged) ---------- */
 function parseTestimonials(txt) {
@@ -95,31 +96,19 @@ async function loadTestimonials() {
   };
 }
 
-/* ---------- Who We Worked With parser (intro as normal text) ---------- */
-/**
- * Structure:
- * [Intro paragraph...]
- *
- * Title 1:
- * Body lines...
- *
- * Title 2:
- * Body lines...
- * ...
- */
+/* ---------- Who We Worked With parser (unchanged) ---------- */
 function parseWhoWeWorkedWith(txt) {
   const rawLines = splitLines(txt);
   const lines = rawLines.map((l) => l.replace(/\u00A0/g, " ").trim());
   const N = lines.length;
 
-  // Intro paragraph: from top until first blank line (handle soft hyphen wraps)
+  // Intro paragraph
   let i = 0;
   const introBuf = [];
   while (i < N && lines[i] !== "") {
     introBuf.push(lines[i]);
     i++;
   }
-  // join lines, repairing "word-\nwrap" splits
   let intro = introBuf
     .reduce((acc, cur) => {
       if (acc.length && acc[acc.length - 1].endsWith("-") && /^[A-Za-z]/.test(cur)) {
@@ -133,10 +122,8 @@ function parseWhoWeWorkedWith(txt) {
     .replace(/\s{2,}/g, " ")
     .trim();
 
-  // Skip blank lines after intro
   while (i < N && lines[i] === "") i++;
 
-  // Items: any line that ends with ":" is a title; following non-blank lines form its body
   const items = [];
   while (i < N) {
     while (i < N && lines[i] === "") i++;
@@ -189,8 +176,6 @@ export default function Testimonials() {
     };
   }, []);
 
-  const items = data.items || [];
-
   const FIXED_HEADING =
     "The success of DATASCIENCEGT is built on a foundation of trust and expertise. These testimonials reflect the experience of working with our company.";
 
@@ -210,8 +195,26 @@ export default function Testimonials() {
         />
       </section>
 
-      {/* WHO WE WORKED WITH — centered backdrop only */}
-      <section className="mx-auto max-w-6xl px-4 sm:px-6 mt-10 sm:mt-12">
+      {/* ===== TESTIMONIALS (moved up) ===== */}
+      <section className="px-5 md:px-10 lg:px-16 py-6 md:py-8">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-semibold text-white/90">{FIXED_HEADING}</h2>
+          {data.intro && <p className="text-white/70 mt-3 max-w-2xl">{data.intro}</p>}
+        </div>
+      </section>
+
+      <section className="px-3 md:px-6 lg:px-10 pb-10 md:pb-16">
+        <div className="relative mx-auto max-w-[1100px]">
+          {/* background ornament kept behind carousel */}
+
+          <div className="relative z-10">
+            <TestimonialsCarousel items={data.items || []} showTitle={false} />
+          </div>
+        </div>
+      </section>
+
+      {/* ===== WHO WE WORKED WITH (now below testimonials) ===== */}
+      <section className="mx-auto max-w-6xl px-4 sm:px-6 mt-6 sm:mt-8">
         <div className="relative h-[120px] sm:h-[180px] lg:h-[220px] flex items-center justify-center">
           <span
             aria-hidden="true"
@@ -281,37 +284,6 @@ export default function Testimonials() {
           </div>
         </section>
       )}
-
-      {/* Heading for Testimonials */}
-      <section className="px-5 md:px-10 lg:px-16 py-6 md:py-8">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-semibold text-white/90">{FIXED_HEADING}</h2>
-          {data.intro && <p className="text-white/70 mt-3 max-w-2xl">{data.intro}</p>}
-        </div>
-      </section>
-
-      {/* Carousel */}
-      <section className="px-3 md:px-6 lg:px-10 pb-16">
-        <div className="relative mx-auto max-w-[1100px]">
-          <img
-            src={ornamentImg}
-            alt="pattern"
-            className="absolute z-0 pointer-events-none"
-            style={{
-              top: "-100px",
-              right: "150px",
-              width: "150px",
-              opacity: 1,
-              filter:
-                "brightness(0.35) contrast(1.6) saturate(0.9) drop-shadow(0 2px 6px rgba(0,0,0,0.55))",
-              mixBlendMode: "normal",
-            }}
-          />
-          <div className="relative z-10">
-            <TestimonialsCarousel items={data.items || []} showTitle={false} />
-          </div>
-        </div>
-      </section>
     </main>
   );
 }
