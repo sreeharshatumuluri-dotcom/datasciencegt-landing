@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import defaultPhoto from "../assets/GT1.jpg";
-import heroPhoto from "../assets/radission-us-_XeQ8XEWb4Q-unsplash 1.png";
+import heroPhoto from "../assets/testimonials.png";
 import TestimonialsCarousel from "../components/TestimonialsCarousel";
-
 import img1 from "../assets/3.png";
 import img2 from "../assets/asset-approach.png";
 import img3 from "../assets/2.png";
@@ -180,11 +179,8 @@ export default function Testimonials() {
   return (
     <main className="min-h-screen text-white" style={{ background: data.bg }}>
       {/* Spacer for fixed navbar */}
-      
-
-      {/* Hero */}
-      {/* Hero (full width & height, directly below navbar) */}
-<section className="relative w-full h-[60vh] min-h-[300px] bg-[#0b0b0b]">
+    
+<section className="relative w-full h-[60vh] min-h-[300px]">
   <img
     src={heroPhoto}
     alt="DatascienceGT — office collaboration"
