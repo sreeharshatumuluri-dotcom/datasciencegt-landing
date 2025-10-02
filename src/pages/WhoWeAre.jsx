@@ -36,7 +36,7 @@ function Hero() {
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black leading-tight text-white drop-shadow">
               End-to-End Data & AI Solutions
               <br />
-              for <span className="text-white/95">Value Seeking Teams.</span>
+              for <span className="text-white/95">Value-Seeking Teams.</span>
             </h1>
   <div className="mt-6 flex items-center gap-3">
   <a
