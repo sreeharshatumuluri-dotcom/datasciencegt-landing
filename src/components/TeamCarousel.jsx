@@ -14,21 +14,21 @@ import harshaImg from "../assets/team/harsha.jpg";
 const TEAM = [
   {
     bg: madhavImg,
-    name: "Madhav Tumuluri",
+    name: "Madhav",
     title: "Manager, Business & Strategy",
     desc:
       "Madhav is a vital member of the DATASCIENCEGT team, specializing in finance and strategy. As an experienced financial analyst and an MBA in Finance, he brings a sharp business focus to every project. Madhav is responsible for key internal operations, including payroll and client management systems. He also leads internal automation efforts, ensuring the company runs efficiently so the team can stay laser-focused on delivering value to our clients. Madhav’s unique combination of business acumen and technical skill makes him an invaluable asset to both the company and its partners.",
   },
   {
     bg: gopalaImg,
-    name: "Gopala Tumuluri",
+    name: "Gopala",
     title: "Technology and Business Lead",
     desc:
       "Gopala is passionate about solving human and business problems through data, leveraging emerging data science and AI technologies. Before founding DATASCIENCEGT in 2015, Gopala led, shaped, and expanded technology products in numerous mid-sized and startup companies for over 20 years. He defined, developed, marketed, and grew highly differentiated and profitable products in global markets. In his personal life, Gopala is a dad of three sons. He maintains a deep commitment to fitness through exercise and a whole-foods-based, vegetarian diet. He currently divides his time between Pittsburgh and Chicago.",
   },
   {
     bg: harshaImg,
-    name: "Sree Harsha Tumuluri",
+    name: "Sree Harsha",
     title: "Developer, Software & AI",
     desc:
       "Harsha is an integral member of the DATASCIENCEGT team, bringing strong technical expertise in software engineering, data systems, and AI/ML solutions. He focuses on designing scalable architectures, building reliable platforms, and ensuring smooth integration across cloud and data environments. In addition to his engineering contributions, Harsha supports client delivery by aligning technical solutions with business goals, ensuring projects create measurable impact. His blend of technical skill and problem-solving mindset adds significant value to both the company and its clients.",
