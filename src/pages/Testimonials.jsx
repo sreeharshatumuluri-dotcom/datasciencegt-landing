@@ -1,9 +1,7 @@
-// src/pages/Testimonials.jsx
 import React, { useEffect, useState } from "react";
 import defaultPhoto from "../assets/GT1.jpg";
 import heroPhoto from "../assets/testimonials.png";
 import TestimonialsCarousel from "../components/TestimonialsCarousel";
-
 import img1 from "../assets/3.png";
 import img2 from "../assets/asset-approach.png";
 import img3 from "../assets/2.png";
@@ -12,8 +10,6 @@ import img5 from "../assets/asset-approach.png";
 import img6 from "../assets/2.png";
 import img7 from "../assets/3.png";
 import FallbackImg from "../assets/2.png";
-
-import WhoWeWorkedWithCarousel from "../components/WhoWeWorkedWithCarousel";
 
 const WW_PATH = "/content/pages/what-others-say/who-we-worked-with.txt";
 const gallery = [img1, img2, img3, img4, img5, img6, img7];
@@ -169,65 +165,20 @@ export default function Testimonials() {
         if (!cancelled) setWhoErr(e.message || "Failed to load who-we-worked-with");
       });
     return () => {
-        cancelled = true;
+      cancelled = true;
     };
   }, []);
 
-  const HEADING_TITLE = "Affirmation";
+  // Testimonials heading (lowercase per earlier direction)
+  const HEADING_TITLE = "affirmation";
   const HEADING_SUBHEAD =
     "The success of DATASCIENCEGT is built on a foundation of trust and expertise. These testimonials reflect the experience of working with our company.";
 
-  // BUILD CAROUSEL ITEMS: image + who-we-worked-with text
-  const CLIENT_ITEMS =
-    who.items.length
-      ? who.items.map((card, idx) => ({
-          src: gallery[idx % gallery.length],
-          alt: card.title,
-          title: card.title,
-          body: card.body || "",
-        }))
-      : // fallback if file is empty/unavailable -> at least show captions
-        [
-          {
-            src: gallery[0] || FallbackImg,
-            alt: "Client",
-            title: "Trusted partners",
-            body:
-              "We’ve collaborated with startups and enterprises across finance, healthcare, public sector, and more—delivering reliable data platforms and ML solutions.",
-          },
-          {
-            src: gallery[1] || FallbackImg,
-            alt: "Client",
-            title: "Enterprise data programs",
-            body:
-              "Data pipelines, governance, observability, and analytics—designed for scale and maintainability.",
-          },
-          {
-            src: gallery[2] || FallbackImg,
-            alt: "Client",
-            title: "ML systems",
-            body:
-              "Model development to deployment: experimentation, MLOps automation, inference APIs, and monitoring.",
-          },
-          {
-            src: gallery[3] || FallbackImg,
-            alt: "Client",
-            title: "Cloud & real-time",
-            body:
-              "AWS-native architectures, real-time streaming, and cost-optimized deployments.",
-          },
-          {
-            src: gallery[4] || FallbackImg,
-            alt: "Client",
-            title: "Outcomes",
-            body:
-              "We focus on measurable impact—better decisions, faster delivery, and higher reliability.",
-          },
-        ];
+  const imageForIndex = (idx) => gallery[idx % gallery.length] || FallbackImg;
 
   return (
     <main className="min-h-screen text-white" style={{ background: data.bg }}>
-      {/* ===== HERO ===== */}
+      {/* Hero */}
       <section className="relative w-full h-[60vh] min-h-[300px]">
         <img
           src={heroPhoto}
@@ -239,11 +190,81 @@ export default function Testimonials() {
         />
       </section>
 
-      {/* ===== TESTIMONIALS ===== */}
+      {/* ===================== WHO WE WORKED WITH (now ABOVE testimonials) ===================== */}
+      <section className="mx-auto max-w-6xl px-4 sm:px-6 mt-6 sm:mt-8">
+        <div className="relative h-[120px] sm:h-[180px] lg:h-[220px] flex items-center justify-center">
+          <span
+            aria-hidden="true"
+            className="pointer-events-none select-none absolute inset-0 flex items-center justify-center
+                       font-black tracking-[0.08em] uppercase leading-none
+                       text-transparent bg-clip-text text-center
+                       text-[36px] sm:text-[80px] lg:text-[120px]
+                       bg-[linear-gradient(to_bottom,#15303b_0%,#173439_50%,#3d4850_100%)]"
+            style={{ WebkitTextFillColor: "transparent", textShadow: "0 0 24px rgba(23,52,58,0.35)" }}
+          >
+            WHO WE WORKED WITH
+          </span>
+        </div>
+      </section>
+
+      {/* Intro paragraph BELOW */}
+      {who.intro && (
+        <section className="mx-auto max-w-6xl px-4 sm:px-6 -mt-2 mb-8">
+          <p className="text-base sm:text-lg leading-7 text-slate-300 whitespace-pre-line relative z-10">
+            {who.intro}
+          </p>
+        </section>
+      )}
+      {whoErr && (
+        <section className="mx-auto max-w-6xl px-4 sm:px-6 -mt-2 mb-8">
+          <p className="text-sm text-amber-300/90">
+            Couldn’t load “who we worked with” content. Check the file path: {WW_PATH}
+          </p>
+        </section>
+      )}
+
+      {/* Items grid */}
+      {!!who.items.length && (
+        <section className="mx-auto max-w-6xl px-4 sm:px-6 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+            {who.items.map((card, idx) => (
+              <div key={idx} className="w-full md:w-[515px] h-auto md:h-[541px] flex flex-col">
+                <div className="flex items-start justify-start mb-4">
+                  <img
+                    src={imageForIndex(idx)}
+                    alt={card.title}
+                    className="w-[120px] h-[120px] sm:w-[160px] sm:h-[160px] md:w-[180px] md:h-[180px] object-contain"
+                    onError={(e) => {
+                      e.currentTarget.onerror = null;
+                      e.currentTarget.src = FallbackImg;
+                    }}
+                  />
+                </div>
+                <div className="flex-1">
+                  <div className="flex items-start gap-2">
+                    <span className="mt-2 h-2 w-2 sm:h-2.5 sm:w-2.5 rounded-full bg-[#52C1C4] shrink-0" />
+                    <h3 className="text-lg sm:text-xl md:text-[22px] leading-tight font-semibold text-[#52C1C4]">
+                      {card.title}
+                    </h3>
+                  </div>
+                  {card.body && (
+                    <p className="mt-2 text-sm sm:text[14px] leading-6 text-slate-400 whitespace-pre-line">
+                      {card.body}
+                    </p>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* ===================== TESTIMONIALS (moved BELOW WW) ===================== */}
       <section className="px-5 md:px-10 lg:px-16 py-6 md:py-8">
         <div className="max-w-6xl mx-auto">
+          {/* Subtle gradient heading */}
           <h2
-            className="font-black tracking-[0.08em] leading-none  bg-clip-text
+            className="font-black tracking-[0.08em] leading-none bg-clip-text
                        text-[32px] sm:text-[44px] lg:text-[52px]
                        bg-[linear-gradient(180deg,#8b9aa3_0%,#6a7a82_50%,#aebbc2_100%)]"
             style={{
@@ -254,6 +275,7 @@ export default function Testimonials() {
             {HEADING_TITLE}
           </h2>
 
+          {/* Subhead */}
           <p className="mt-3 text-sm md:text-base leading-7 text-white/80 max-w-3xl">
             {HEADING_SUBHEAD}
           </p>
@@ -272,43 +294,6 @@ export default function Testimonials() {
             <TestimonialsCarousel items={data.items || []} showTitle={false} />
           </div>
         </div>
-      </section>
-
-      {/* ===== WHO WE WORKED WITH ===== */}
-      <section className="mx-auto max-w-6xl px-4 sm:px-6 mt-6 sm:mt-8">
-        <div className="relative h-[120px] sm:h-[180px] lg:h-[220px] flex items-center justify-center">
-          <span
-            aria-hidden="true"
-            className="pointer-events-none select-none absolute inset-0 flex items-center justify-center
-                       font-black tracking-[0.08em] uppercase leading-none
-                       text-transparent bg-clip-text text-center
-                       text-[36px] sm:text-[80px] lg:text-[120px]
-                       bg-[linear-gradient(to_bottom,#15303b_0%,#173439_50%,#3d4850_100%)]"
-            style={{ WebkitTextFillColor: "transparent", textShadow: "0 0 24px rgba(23,52,58,0.35)" }}
-          >
-            WHO WE WORKED WITH
-          </span>
-        </div>
-      </section>
-
-      {who.intro && (
-        <section className="mx-auto max-w-6xl px-4 sm:px-6 -mt-2 mb-8">
-          <p className="text-base sm:text-lg leading-7 text-slate-300 whitespace-pre-line relative z-10">
-            {who.intro}
-          </p>
-        </section>
-      )}
-      {whoErr && (
-        <section className="mx-auto max-w-6xl px-4 sm:px-6 -mt-2 mb-8">
-          <p className="text-sm text-amber-300/90">
-            Couldn’t load “who we worked with” content. Check the file path: {WW_PATH}
-          </p>
-        </section>
-      )}
-
-      {/* === The new CodePen-style carousel with content on center card === */}
-      <section className="mx-auto max-w-7xl px-4 sm:px-6 mb-14">
-        <WhoWeWorkedWithCarousel items={CLIENT_ITEMS} className="mx-auto" />
       </section>
     </main>
   );

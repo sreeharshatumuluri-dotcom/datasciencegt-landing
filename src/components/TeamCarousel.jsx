@@ -1,3 +1,4 @@
+// src/components/TeamCarousel.jsx
 import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Pagination } from "swiper/modules";
@@ -68,7 +69,7 @@ function useBodyScrollLock(isOpen) {
 
     const preventTouchMove = (e) => {
       const modalRoot = document.getElementById("team-modal-root");
-      if (modalRoot && modalRoot.contains(e.target)) return; 
+      if (modalRoot && modalRoot.contains(e.target)) return;
       e.preventDefault();
     };
     document.addEventListener("touchmove", preventTouchMove, { passive: false });
@@ -103,7 +104,6 @@ export default function TeamCarousel() {
         .team-swiper .swiper-slide { width: clamp(260px, 85vw, 400px); }
         .no-highlight { -webkit-tap-highlight-color: transparent; }
 
-        /* Coverflow shadows (unchanged) */
         .swiper-3d .swiper-slide-shadow-left {
           background-image: linear-gradient(to left, #000, #0000);
           border-right: 1px solid #000; border-radius: 10px;
@@ -113,7 +113,6 @@ export default function TeamCarousel() {
           box-shadow: 0 0 0 1px #000; border-radius: 10px;
         }
 
-        /* Pagination bullets */
         .team-swiper .swiper-pagination-bullet {
           background: rgba(59, 130, 246, 0.35);
           transition: all .3s ease 0s; border-radius: 8px;
@@ -130,29 +129,24 @@ export default function TeamCarousel() {
         <h2 className="text-center text-2xl sm:text-3xl font-extrabold text-white">The Team</h2>
         <p className="mt-2 text-center text-slate-300">The people behind DATASCIENCEGT</p>
 
+        {/* Using rewind (not loop) to prevent index skip with coverflow + auto width */}
         <Swiper
           modules={[EffectCoverflow, Pagination]}
           className="team-swiper !pb-12"
           effect="coverflow"
           centeredSlides
-          grabCursor
           slidesPerView="auto"
-          initialSlide={1}
-          loop
-          loopAdditionalSlides={TEAM.length * 3}
-          watchSlidesProgress
+          rewind
+          slidesPerGroup={1}
+          initialSlide={0}
+          grabCursor
           speed={450}
-          simulateTouch
           allowTouchMove
-          followFinger
-          resistanceRatio={0.65}
-          threshold={5}
+          threshold={6}
           shortSwipes
           longSwipes
-          longSwipesMs={120}
-          longSwipesRatio={0.2}
+          longSwipesRatio={0.5}
           touchAngle={45}
-          touchReleaseOnEdges
           coverflowEffect={{
             rotate: 40,
             stretch: 0,
@@ -183,7 +177,6 @@ function Slide({ m, onOpen }) {
 
   return (
     <div className="w-[min(85vw,400px)]">
-      {/* Entire photo card clickable */}
       <button
         type="button"
         onClick={onOpen}
@@ -195,11 +188,8 @@ function Slide({ m, onOpen }) {
           className="absolute inset-0 bg-center bg-cover"
           style={{ backgroundImage: `url(${bgUrl})` }}
         />
-        
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/20 to-black/70" />
         <div className="absolute inset-0 bg-gradient-to-tr from-black/20 to-transparent" />
-
-        {/* Name + Title on photo */}
         <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5">
           <div className="backdrop-blur-sm bg-black/35 border border-white/10 rounded-xl px-4 py-3">
             <div className="text-white text-lg font-semibold leading-tight">{m.name}</div>
@@ -208,7 +198,6 @@ function Slide({ m, onOpen }) {
         </div>
       </button>
 
-      {/* Truncated bio box — also clickable */}
       <button
         type="button"
         onClick={onOpen}
@@ -225,9 +214,7 @@ function Slide({ m, onOpen }) {
   );
 }
 
-/* ---------------- FULL-SCREEN OVERLAY MODAL ----------------
-   Shows ONLY the card; covers everything else with a solid background.
-   One Close button (bottom sticky). Smaller on mobile. */
+/* ---------------- FULL-SCREEN OVERLAY MODAL ---------------- */
 function FullscreenModal({ member, onClose }) {
   const bgUrl = typeof member.bg === "string" ? member.bg : member.bg?.src ?? member.bg;
 
@@ -243,7 +230,6 @@ function FullscreenModal({ member, onClose }) {
           id="team-modal-card"
           className="w-[min(86vw,980px)] md:w-[min(92vw,980px)] rounded-2xl border border-white/10 bg-[#1A1A1A]"
         >
-          {/* Body */}
           <div className="grid md:grid-cols-[360px,1fr] gap-0 md:gap-6 p-5">
             <div className="relative h-[200px] sm:h-[230px] md:h-[420px] rounded-xl overflow-hidden">
               <img
@@ -264,7 +250,6 @@ function FullscreenModal({ member, onClose }) {
             </div>
           </div>
 
-          {/* Single Close (bottom sticky) */}
           <div className="sticky bottom-0 z-10 px-5 pb-5 pt-3 bg-gradient-to-t from-[#1A1A1A] to-transparent">
             <button
               onClick={onClose}
@@ -278,7 +263,5 @@ function FullscreenModal({ member, onClose }) {
     </div>
   );
 
-  // Render OVER the entire app to escape any stacking contexts
   return createPortal(overlay, document.body);
 }
-
