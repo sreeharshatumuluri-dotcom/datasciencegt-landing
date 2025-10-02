@@ -17,7 +17,7 @@ const TEAM = [
     name: "Madhav",
     title: "Manager, Business & Strategy",
     desc:
-      "Madhav is a vital member of the DATASCIENCEGT team, specializing in finance and strategy. As an experienced financial analyst and an MBA in Finance, he brings a sharp business focus to every project. Madhav is responsible for key internal operations, including payroll and client management systems. He also leads internal automation efforts, ensuring the company runs efficiently so the team can stay laser-focused on delivering value to our clients. Madhav’s unique combination of business acumen and technical skill makes him an invaluable asset to both the company and its partners.",
+      "Madhav is a vital member of the DATASCIENCEGT team, specializing in finance and strategy. As an experienced financial analyst and an MBA in Finance, he brings a sharp business focus to every project. Madhav is responsible for key internal operations, including payroll and client management systems. He also leads internal automation efforts, ensuring the company runs efficiently so the team stays immersed in delivering value to our clients. Madhav’s unique combination of business acumen and technical skill makes him an invaluable asset to both the company and its partners.",
   },
   {
     bg: gopalaImg,
