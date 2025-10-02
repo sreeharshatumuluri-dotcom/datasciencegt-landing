@@ -86,11 +86,11 @@ function About() {
           <p className="mt-4 max-w-3xl mx-auto text-slate-300">
             For over a decade, DATASCIENCEGT has been helping organizations leverage data for
             AI- and ML-driven business results. We work relentlessly on behalf of our clients
-            to add business value fast. Our technical expertise and business savvy intersect
+            to add business at speed. Our technical expertise and business savvy intersect
             to produce high-impact, lasting solutions fast. The team has experience in the
             entire end-to-end value chain of data, from platform architecture to engineering
             data pipelines to building and operationalizing production-scale custom AI models.
-            Work with us, ride with us, and benefit your business through us.
+            Work with us, ride with us, and benefit through us.
           </p>
         </div>
 
@@ -98,19 +98,20 @@ function About() {
           <FeatureRow
             flip={false}
             title="Who is Behind DATASCIENCEGT?"
-            text="The company was created by our founder, Gopala Tumuluri. He has over 30 years of experience 
-            in the technology industry in numerous roles, starting as a software engineer and rising up to lead 
-            a 100+ member engineering team to build cloud-based data products and services. Gopala created 
-            DATASCIENCEGT over 10 years ago when he pivoted to a hands-on career in the field of data science 
-            and decided to work with clients on their diverse, impactful, and high-value projects. In his prior
-             professional career, he also worked as a product line owner, marketing leader, and business unit 
-             head for products and cloud services that generated tens of millions in annual revenue. During 
-             this time, he also honed his business skills and insistence on business value add. At DATASCIENCEGT, 
-             Gopala brings together his hard-coded technical and business skills to deliver value to the company's 
-             clients. Now, he has also built a team and trained them to be laser-focused on value delivery through 
-             high-quality technical work. Gopala holds three master's degrees - an MS in computer science from the 
-             University of Kentucky, an MBA from Carnegie Mellon University, and a Master's degree in data science 
-             from the University of California, Berkeley. You can win with him and his team."
+            text="The company was created by our founder, Gopala Tumuluri. He has over 30 years of experience
+             in the technology industry in numerous roles, rising from software engineer to leading a 100+ 
+             member engineering team that built cloud-based data products and services. Gopala created 
+             DATASCIENCEGT over 10 years ago when he pivoted to a hands-on career in the field of data 
+             science and decided to work with clients on their diverse, impactful, and high-value projects.
+             In his prior professional career, he also worked as a product line owner, marketing leader, and 
+             business unit head for products and cloud services that generated tens of millions in annual 
+             revenue. Throughout his career, he deployed the best blend of technical expertise and business
+             skills to add distinct and unique value. At DATASCIENCEGT, Gopala brings together the same blend 
+             to deliver value to the company's clients. He has also built a team and trained them to be 
+             laser-focused on value delivery through high-quality technical work. Gopala holds three master's
+             degrees - a Master's degree in data science from the University of California, Berkeley, an MBA
+             from Carnegie Mellon University, and an MS in computer science from the University of Kentucky. 
+             You can win with him and his team."
             imageSrc={approachImg}
           />
 
