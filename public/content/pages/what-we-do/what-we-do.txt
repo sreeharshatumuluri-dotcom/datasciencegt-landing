@@ -3,7 +3,7 @@ At DATASCIENCEGT, we are the swiss-army-knife of data, its lifecycle, and busine
 Expertise, Experience and Value We Add
 
 Data and Business Value Creation
-We are laser-focused on turning data into tangible business value. We don't just process numbers. We provide strategic insights and solutions that drive revenue and improve efficiency. This approach is built on our extensive experience in financial analysis and creating powerful analytics. Our main goal is to deliver high-impact business outcomes.
+We are obsessed about turning data into tangible business value. We don't just process numbers. We provide strategic insights and solutions that drive revenue and improve efficiency. This approach is built on our extensive experience in financial analysis and creating powerful analytics. Our main goal is to deliver high-impact business outcomes.
 
 Data Architecture and Platform Engineering
 We specialize in designing and implementing robust data platforms. Whether you need to build a new system or improve an existing one, we can architect a cloud-based solution. This ensures sustainable business value and supports AI development. Our expertise spans multiple cloud platforms. We build everything from machine learning platforms on Azure to data warehouses on AWS.
