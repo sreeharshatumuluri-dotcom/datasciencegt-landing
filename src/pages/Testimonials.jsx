@@ -1,7 +1,9 @@
+// src/pages/Testimonials.jsx
 import React, { useEffect, useState } from "react";
 import defaultPhoto from "../assets/GT1.jpg";
 import heroPhoto from "../assets/testimonials.png";
 import TestimonialsCarousel from "../components/TestimonialsCarousel";
+
 import img1 from "../assets/3.png";
 import img2 from "../assets/asset-approach.png";
 import img3 from "../assets/2.png";
@@ -10,6 +12,8 @@ import img5 from "../assets/asset-approach.png";
 import img6 from "../assets/2.png";
 import img7 from "../assets/3.png";
 import FallbackImg from "../assets/2.png";
+
+import WhoWeWorkedWithCarousel from "../components/WhoWeWorkedWithCarousel";
 
 const WW_PATH = "/content/pages/what-others-say/who-we-worked-with.txt";
 const gallery = [img1, img2, img3, img4, img5, img6, img7];
@@ -165,37 +169,79 @@ export default function Testimonials() {
         if (!cancelled) setWhoErr(e.message || "Failed to load who-we-worked-with");
       });
     return () => {
-      cancelled = true;
+        cancelled = true;
     };
   }, []);
 
-  // Singular heading
   const HEADING_TITLE = "Affirmation";
   const HEADING_SUBHEAD =
     "The success of DATASCIENCEGT is built on a foundation of trust and expertise. These testimonials reflect the experience of working with our company.";
 
-  const imageForIndex = (idx) => gallery[idx % gallery.length] || FallbackImg;
+  // BUILD CAROUSEL ITEMS: image + who-we-worked-with text
+  const CLIENT_ITEMS =
+    who.items.length
+      ? who.items.map((card, idx) => ({
+          src: gallery[idx % gallery.length],
+          alt: card.title,
+          title: card.title,
+          body: card.body || "",
+        }))
+      : // fallback if file is empty/unavailable -> at least show captions
+        [
+          {
+            src: gallery[0] || FallbackImg,
+            alt: "Client",
+            title: "Trusted partners",
+            body:
+              "We’ve collaborated with startups and enterprises across finance, healthcare, public sector, and more—delivering reliable data platforms and ML solutions.",
+          },
+          {
+            src: gallery[1] || FallbackImg,
+            alt: "Client",
+            title: "Enterprise data programs",
+            body:
+              "Data pipelines, governance, observability, and analytics—designed for scale and maintainability.",
+          },
+          {
+            src: gallery[2] || FallbackImg,
+            alt: "Client",
+            title: "ML systems",
+            body:
+              "Model development to deployment: experimentation, MLOps automation, inference APIs, and monitoring.",
+          },
+          {
+            src: gallery[3] || FallbackImg,
+            alt: "Client",
+            title: "Cloud & real-time",
+            body:
+              "AWS-native architectures, real-time streaming, and cost-optimized deployments.",
+          },
+          {
+            src: gallery[4] || FallbackImg,
+            alt: "Client",
+            title: "Outcomes",
+            body:
+              "We focus on measurable impact—better decisions, faster delivery, and higher reliability.",
+          },
+        ];
 
   return (
     <main className="min-h-screen text-white" style={{ background: data.bg }}>
-      {/* Spacer for fixed navbar */}
-    
-<section className="relative w-full h-[60vh] min-h-[300px]">
-  <img
-    src={heroPhoto}
-    alt="DatascienceGT — office collaboration"
-    className="absolute inset-0 w-full h-full object-cover"
-    loading="eager"
-    decoding="async"
-    style={{ filter: "brightness(1.05) contrast(1.02)" }}
-  />
-</section>
-
+      {/* ===== HERO ===== */}
+      <section className="relative w-full h-[60vh] min-h-[300px]">
+        <img
+          src={heroPhoto}
+          alt="DatascienceGT — office collaboration"
+          className="absolute inset-0 w-full h-full object-cover"
+          loading="eager"
+          decoding="async"
+          style={{ filter: "brightness(1.05) contrast(1.02)" }}
+        />
+      </section>
 
       {/* ===== TESTIMONIALS ===== */}
       <section className="px-5 md:px-10 lg:px-16 py-6 md:py-8">
         <div className="max-w-6xl mx-auto">
-          {/* Subtle gradient heading */}
           <h2
             className="font-black tracking-[0.08em] leading-none  bg-clip-text
                        text-[32px] sm:text-[44px] lg:text-[52px]
@@ -208,7 +254,6 @@ export default function Testimonials() {
             {HEADING_TITLE}
           </h2>
 
-          {/* Subhead */}
           <p className="mt-3 text-sm md:text-base leading-7 text-white/80 max-w-3xl">
             {HEADING_SUBHEAD}
           </p>
@@ -246,7 +291,6 @@ export default function Testimonials() {
         </div>
       </section>
 
-      {/* Intro paragraph BELOW */}
       {who.intro && (
         <section className="mx-auto max-w-6xl px-4 sm:px-6 -mt-2 mb-8">
           <p className="text-base sm:text-lg leading-7 text-slate-300 whitespace-pre-line relative z-10">
@@ -262,41 +306,10 @@ export default function Testimonials() {
         </section>
       )}
 
-      {/* Items grid */}
-      {!!who.items.length && (
-        <section className="mx-auto max-w-6xl px-4 sm:px-6 mb-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-            {who.items.map((card, idx) => (
-              <div key={idx} className="w-full md:w-[515px] h-auto md:h-[541px] flex flex-col">
-                <div className="flex items-start justify-start mb-4">
-                  <img
-                    src={imageForIndex(idx)}
-                    alt={card.title}
-                    className="w-[120px] h-[120px] sm:w-[160px] sm:h-[160px] md:w-[180px] md:h-[180px] object-contain"
-                    onError={(e) => {
-                      e.currentTarget.onerror = null;
-                      e.currentTarget.src = FallbackImg;
-                    }}
-                  />
-                </div>
-                <div className="flex-1">
-                  <div className="flex items-start gap-2">
-                    <span className="mt-2 h-2 w-2 sm:h-2.5 sm:w-2.5 rounded-full bg-[#52C1C4] shrink-0" />
-                    <h3 className="text-lg sm:text-xl md:text-[22px] leading-tight font-semibold text-[#52C1C4]">
-                      {card.title}
-                    </h3>
-                  </div>
-                  {card.body && (
-                    <p className="mt-2 text-sm sm:text[14px] leading-6 text-slate-400 whitespace-pre-line">
-                      {card.body}
-                    </p>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-      )}
+      {/* === The new CodePen-style carousel with content on center card === */}
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 mb-14">
+        <WhoWeWorkedWithCarousel items={CLIENT_ITEMS} className="mx-auto" />
+      </section>
     </main>
   );
 }
