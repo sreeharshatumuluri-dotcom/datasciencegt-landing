@@ -9,13 +9,13 @@ As the first data scientist for this company, DATASCIENCEGT transformed their ap
 Top 3 Wireless Company:
 Our team made extensive use of Hadoop and Spark to develop data analysis and predictive models. We also built a multi-purpose text analytics engine and an accessory product recommendation engine. Additionally, we implemented numerous ETL pipelines using Apache Spark.
 
-Massive Social Media Platform Company:
+Leading Social Media Platform Company:
 DATASCIENCEGT acted as a senior data engineering partner, developing and managing numerous big-data pipelines that control all marketing campaigns. We implemented, tested, and deployed many new features and fixes to large-scale pipelines using Python, Spark, and Presto.
 
 Top Wholesale Industrial Distribution Company:
 Our team completely rewrote an existing ad-hoc implementation to deliver a highly efficient, fully automated, and easily extensible product recommendation engine to the direct sales organization. We also contributed foundational code for data preparation, modeling, and results delivery for a new e-commerce product recommendation engine.
 
-Top 5 Financial Company:
+Top 5 Banking Company:
 DATASCIENCEGT owned the design, architecture, and initial implementation of a machine learning platform. This platform, built with Azure Machine Learning, enabled end-to-end modeling pipelines for multiple teams. We also developed technical solutions to transform and migrate large volumes of data from an on-premise proprietary SAS grid platform to ADLS2 in Azure.
 
 Leading Fitness Brand:
