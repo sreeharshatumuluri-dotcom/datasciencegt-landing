@@ -1,6 +1,5 @@
-// src/components/Footer.jsx
 import React from "react";
-import footerBg from "../assets/footer-bg.png"; // ✅ import the asset
+import footerBg from "../assets/footer-bg.png"; 
 
 export default function Footer() {
   return (
@@ -11,7 +10,7 @@ export default function Footer() {
           <div className="relative h-[560px] w-full">
             {/* Background image */}
             <img
-              src={footerBg}                       // ✅ use imported path
+              src={footerBg}                       
               alt="Consultation banner"
               className="absolute inset-0 h-full w-full object-cover"
             />
