@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#1A1A1A]">
       {/* ===== Full-bleed CTA with 10px gutters and rounded corners ===== */}
-      <section className="relative w-screen">
+      <section className="relative">
         <div className="mx-[10px]">
           <div className="relative h-[560px] w-full">
             {/* Background image */}

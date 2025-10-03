@@ -56,7 +56,6 @@ export default function TestimonialsCarousel({ items = [], showTitle = true }) {
       body.style.width = "";
       body.style.overscrollBehavior = "";
       body.style.overflow = "";
-      window.scrollTo(0, y);
     }
     return () => {
       const y = -parseInt(document.body.style.top || "0", 10) || 0;
