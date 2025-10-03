@@ -18,7 +18,7 @@ export default function WhoWeAre() {
 function Hero() {
   return (
     <section className="pt-16 relative bg-[#1A1A1A]">
-      <div className="relative h-[64vh] min-h-[460px] w-full overflow-hidden">
+      <div className="relative h-[64vh] min-h-[460px] max-h-[600px] w-full overflow-hidden">
         <img
           src={heroImg}
           alt="DataScienceGT hero"

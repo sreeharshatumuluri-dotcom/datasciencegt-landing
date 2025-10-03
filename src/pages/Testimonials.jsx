@@ -152,6 +152,20 @@ export default function Testimonials() {
   }, []);
 
   useEffect(() => {
+      const els = Array.from(document.querySelectorAll("[data-animate]"));
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add("in-view");
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      els.forEach((el) => io.observe(el));
+      return () => io.disconnect();
+    }, [data.items.length]);
+
+  useEffect(() => {
     let cancelled = false;
     fetch(WW_PATH, { cache: "no-store" })
       .then(async (res) => {
@@ -177,9 +191,9 @@ export default function Testimonials() {
   const imageForIndex = (idx) => gallery[idx % gallery.length] || FallbackImg;
 
   return (
-    <main className="min-h-screen text-white" style={{ background: data.bg }}>
+    <main className="min-h-screen text-white pt-16" style={{ background: data.bg }}>
       {/* Hero */}
-      <section className="relative w-full h-[60vh] min-h-[300px]">
+      <section className="relative w-full h-[600px]">
         <img
           src={heroPhoto}
           alt="DatascienceGT — office collaboration"
@@ -209,7 +223,7 @@ export default function Testimonials() {
 
       {/* Intro paragraph BELOW */}
       {who.intro && (
-        <section className="mx-auto max-w-6xl px-4 sm:px-6 -mt-2 mb-8">
+        <section className="mx-auto max-w-6xl px-4 sm:px-6 mt-7 mb-8">
           <p className="text-base sm:text-lg leading-7 text-slate-300 whitespace-pre-line relative z-10">
             {who.intro}
           </p>
@@ -228,7 +242,12 @@ export default function Testimonials() {
         <section className="mx-auto max-w-6xl px-4 sm:px-6 mb-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {who.items.map((card, idx) => (
-              <div key={idx} className="w-full md:w-[515px] h-auto md:h-[541px] flex flex-col">
+              <div
+                key={idx}
+                className="w-full md:w-[515px] h-auto md:h-[450px] flex flex-col opacity-0 translate-y-6 transition-all duration-700 ease-out"
+                data-animate
+                style={{ transitionDelay: `${80 * (idx % 8)}ms` }}
+              >
                 <div className="flex items-start justify-start mb-4">
                   <img
                     src={imageForIndex(idx)}
@@ -295,6 +314,13 @@ export default function Testimonials() {
           </div>
         </div>
       </section>
+
+      <style>{`
+        [data-animate].in-view {
+          opacity: 1 !important;
+          transform: translateY(0) !important;
+        }
+      `}</style>
     </main>
   );
 }

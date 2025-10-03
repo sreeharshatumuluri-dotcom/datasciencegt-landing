@@ -184,7 +184,7 @@ export default function WhatWeDo() {
           {data.items.map((card, idx) => (
             <div
               key={idx}
-              className="w-full md:w-[515px] h-auto md:h-[541px] flex flex-col opacity-0 translate-y-6 transition-all duration-700 ease-out"
+              className="w-full md:w-[515px] h-auto md:h-[450px] flex flex-col opacity-0 translate-y-6 transition-all duration-700 ease-out"
               data-animate
               style={{ transitionDelay: `${80 * (idx % 8)}ms` }}
             >
