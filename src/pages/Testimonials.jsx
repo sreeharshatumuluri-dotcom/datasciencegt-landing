@@ -223,7 +223,7 @@ export default function Testimonials() {
 
       {/* Intro paragraph BELOW */}
       {who.intro && (
-        <section className="mx-auto max-w-6xl px-4 sm:px-6 mt-4 mb-8">
+        <section className="mx-auto max-w-6xl px-4 sm:px-6 mt-7 mb-8">
           <p className="text-base sm:text-lg leading-7 text-slate-300 whitespace-pre-line relative z-10">
             {who.intro}
           </p>

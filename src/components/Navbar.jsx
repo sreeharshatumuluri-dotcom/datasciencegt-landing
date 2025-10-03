@@ -15,7 +15,7 @@ export default function Navbar() {
     { to: "/", label: "Who We Are" },
     { to: "/what-we-do", label: "What We Do" },
     { to: "/testimonials", label: "What Others Say" },
-    
+
   ];
 
   return (
@@ -33,14 +33,14 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-8 text-sm text-slate-300">
+        <nav className="hidden md:flex items-center gap-8 text-sm text-slate-300 h-full">
           {nav.map(({ to, label }) => (
             <NavLink
               key={to}
               to={to}
               end={to === "/"}
               className={({ isActive }) =>
-                `hover:text-white transition ${isActive ? "text-white" : ""}`
+                `h-full flex items-center px-1 hover:text-white hover:border-b-[2px] hover:border-white transition ${isActive ? "text-white border-b-[2px] border-white" : ""}`
               }
             >
               {label}
@@ -73,9 +73,8 @@ export default function Navbar() {
 
       {/* Mobile sheet */}
       <div
-        className={`md:hidden overflow-hidden transition-[max-height] duration-300 ease-out ${
-          open ? "max-h-64" : "max-h-0"
-        }`}
+        className={`md:hidden overflow-hidden transition-[max-height] duration-300 ease-out ${open ? "max-h-64" : "max-h-0"
+          }`}
       >
         <nav className="mx-4 sm:mx-6 lg:mx-8 mt-2 mb-4 rounded-xl border border-white/10 bg-[#101010]/95">
           <ul className="py-2">
