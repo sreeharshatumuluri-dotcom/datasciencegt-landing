@@ -191,9 +191,9 @@ export default function Testimonials() {
   const imageForIndex = (idx) => gallery[idx % gallery.length] || FallbackImg;
 
   return (
-    <main className="min-h-screen text-white" style={{ background: data.bg }}>
+    <main className="min-h-screen text-white pt-16" style={{ background: data.bg }}>
       {/* Hero */}
-      <section className="relative w-full h-[60vh] min-h-[300px]">
+      <section className="relative w-full h-[600px]">
         <img
           src={heroPhoto}
           alt="DatascienceGT — office collaboration"
