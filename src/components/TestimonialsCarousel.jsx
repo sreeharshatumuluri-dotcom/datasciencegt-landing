@@ -260,7 +260,7 @@ function ExpandedTestimonial({ item, showTitle, onClose }) {
             <button
               type="button"
               onClick={onClose}
-              className="z-10 h-9 w-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 border border-white/20"
+              className="md:relative md:right-auto md:top-auto absolute right-3 top-3 z-10 h-9 w-9 inline-flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 border border-white/20"
               aria-label="Close"
             >
               <CloseX />
