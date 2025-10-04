@@ -152,18 +152,23 @@ export default function Testimonials() {
   }, []);
 
   useEffect(() => {
-      const els = Array.from(document.querySelectorAll("[data-animate]"));
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            e.target.classList.add("in-view");
-            io.unobserve(e.target);
-          }
-        });
-      }, { threshold: 0.15 });
-      els.forEach((el) => io.observe(el));
-      return () => io.disconnect();
-    }, [data.items.length]);
+    const els = Array.from(document.querySelectorAll("[data-animate]"));
+    els.forEach((el) => el.classList.remove("in-view"));
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add("in-view");
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    els.forEach((el) => io.observe(el));
+    return () => {
+      els.forEach((el) => el.classList.remove("in-view"));
+      io.disconnect();
+    };
+  }, [data.items.length]);
 
   useEffect(() => {
     let cancelled = false;
@@ -244,7 +249,7 @@ export default function Testimonials() {
             {who.items.map((card, idx) => (
               <div
                 key={idx}
-                className="w-full md:w-[515px] h-auto md:h-[450px] flex flex-col opacity-0 translate-y-6 transition-all duration-700 ease-out"
+                className="w-full md:w-[515px] h-auto md:h-[420px] flex flex-col opacity-0 translate-y-6 transition-all duration-700 ease-out"
                 data-animate
                 style={{ transitionDelay: `${80 * (idx % 8)}ms` }}
               >

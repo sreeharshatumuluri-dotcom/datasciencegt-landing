@@ -60,7 +60,7 @@ export default function Footer() {
             © {new Date().getFullYear()} DATASCIENCEGT. All rights reserved
           </span>
           <div className="flex items-center gap-3 sm:gap-6 mt-1 sm:mt-0">
-            <a href="/WhoWeAre" className="hover:text-white px-2 py-1 rounded sm:px-0 sm:py-0">Who We Are</a>
+            <a href="/" className="hover:text-white px-2 py-1 rounded sm:px-0 sm:py-0">Who We Are</a>
             <a href="/what-we-do" className="hover:text-white px-2 py-1 rounded sm:px-0 sm:py-0">What We Do</a>
             <a href="/testimonials" className="hover:text-white px-2 py-1 rounded sm:px-0 sm:py-0">What Others Say</a>
           </div>
