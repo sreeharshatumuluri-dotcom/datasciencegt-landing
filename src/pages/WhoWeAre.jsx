@@ -18,7 +18,7 @@ export default function WhoWeAre() {
 function Hero() {
   return (
     <section className="pt-16 relative bg-[#1A1A1A]">
-      <div className="relative h-[64vh] min-h-[460px] max-h-[600px] w-full overflow-hidden">
+      <div className="relative h-[64vh] min-h-[600px] max-h-[600px] w-full overflow-hidden">
         <img
           src={heroImg}
           alt="DataScienceGT hero"
@@ -38,15 +38,15 @@ function Hero() {
               <br />
               for <span className="text-white/95">Value-Seeking Teams</span>
             </h1>
-  <div className="mt-6 flex items-center gap-3">
-  <a
-    href="mailto:ride@datasciencegt.com"
-    className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-rose-500 to-orange-400 text-white font-medium shadow-lg shadow-rose-500/25"
-    role="button"
-  >
-    Ride with US
-  </a>
-</div>
+            <div className="mt-6 flex items-center gap-3">
+              <a
+                href="mailto:ride@datasciencegt.com"
+                className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-rose-500 to-orange-400 text-white font-medium shadow-lg shadow-rose-500/25"
+                role="button"
+              >
+                Ride with US
+              </a>
+            </div>
 
           </div>
         </div>
@@ -98,20 +98,27 @@ function About() {
           <FeatureRow
             flip={false}
             title="Who is Behind DATASCIENCEGT?"
-            text="The company was created by our founder, Gopala Tumuluri. He has over 30 years of experience
-             in the technology industry in numerous roles, rising from software engineer to leading a 100+ 
-             member engineering team that built cloud-based data products and services. Gopala created 
-             DATASCIENCEGT over 10 years ago when he pivoted to a hands-on career in the field of data 
-             science and decided to work with clients on their diverse, impactful, and high-value projects.
-             In his prior professional career, he also worked as a product line owner, marketing leader, and 
-             business unit head for products and cloud services that generated tens of millions in annual 
-             revenue. Throughout his career, he deployed the best blend of technical expertise and business
-             skills to add distinct and unique value. At DATASCIENCEGT, Gopala brings together the same blend 
-             to deliver value to the company's clients. He has also built a team and trained them to be 
-             laser-focused on value delivery through high-quality technical work. Gopala holds three master's
-             degrees - a Master's degree in data science from the University of California, Berkeley, an MBA
-             from Carnegie Mellon University, and an MS in computer science from the University of Kentucky. 
-             You can win with him and his team."
+            text={
+              <>
+                The company was created by our founder, Gopala Tumuluri. He has over 30 years of experience
+                in the technology industry in numerous roles, rising from software engineer to leading a 100+
+                member engineering team that built cloud-based data products and services. Gopala created
+                DATASCIENCEGT over 10 years ago when he pivoted to a hands-on career in the field of data
+                science and decided to work with clients on their diverse, impactful, and high-value projects.
+                In his prior professional career, he also worked as a product line owner, marketing leader, and
+                business unit head for products and cloud services that generated tens of millions in annual
+                revenue. Throughout his career, he deployed the best blend of technical expertise and business
+                skills to add distinct and unique value. <br />
+                <div className="mt-1">
+                  At DATASCIENCEGT, Gopala brings together the same blend
+                  to deliver value to the company's clients. He has also built a team and trained them to be
+                  laser-focused on value delivery through high-quality technical work. Gopala holds three master's
+                  degrees - a Master's degree in data science from the University of California, Berkeley, an MBA
+                  from Carnegie Mellon University, and an MS in computer science from the University of Kentucky.
+                  You can win with him and his team.
+                </div>
+              </>
+            }
             imageSrc={approachImg}
           />
 
@@ -140,7 +147,7 @@ function About() {
             }
             imageSrc={approachImg2}
           />
-          <TeamCarousel />          
+          <TeamCarousel />
         </div>
       </div>
     </section>
