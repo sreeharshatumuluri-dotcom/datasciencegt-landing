@@ -161,6 +161,10 @@ export default function TestimonialsCarousel({ items = [], showTitle = true }) {
         .${pagCls}.swiper-pagination-bullets .swiper-pagination-bullet-active {
           opacity: 1;
         }
+        
+        @keyframes fadeIn {
+          to {opacity: 1;}
+        }
       `}</style>
 
       {expandedIdx !== null ? (
@@ -235,9 +239,7 @@ function ExpandedTestimonial({ item, showTitle, onClose }) {
   const first = title || (quote?.split(".")[0] || "").trim();
 
   return (
-    <div className="relative w-full max-w-[95vw] sm:max-w-3xl bg-neutral-900 text-white rounded-2xl border border-white/10 shadow-2xl overflow-hidden">
-
-
+    <div className="relative w-full max-w-[95vw] sm:max-w-3xl bg-neutral-900 text-white rounded-2xl border border-white/10 shadow-2xl overflow-hidden opacity-0 animate-[fadeIn_0.2s_ease-in-out_forwards]">
       <div className="flex flex-col md:flex-row">
         {/* Image left */}
         <div className="w-full md:w-72 flex-shrink-0">

@@ -118,6 +118,10 @@ export default function TeamCarousel() {
           transition: all .3s ease 0s; border-radius: 8px;
         }
         .team-swiper .swiper-pagination-bullet-active { background:#3b82f6; width: 30px; }
+        
+        @keyframes fadeIn {
+          to {opacity: 1;}
+        }
 
         @media (max-width: 380px) {
           .team-card { height: 440px; }
@@ -221,7 +225,7 @@ function FullscreenModal({ member, onClose }) {
   const overlay = (
     <div
       id="team-modal-root"
-      className="fixed inset-0 z-[99999] bg-[#1A1A1A]/95 overflow-y-auto"
+      className="fixed inset-0 z-[99999] bg-[#1A1A1A]/95 overflow-y-auto opacity-0 animate-[fadeIn_0.2s_ease-in-out_forwards]"
       role="dialog"
       aria-modal="true"
     >
