@@ -1,7 +1,7 @@
 We prioritize fast value creation by eliminating friction from the business process. We've established a set of rules to ensure a comfortable ride with us, providing a seamless path to success.  Here is how we work!
 
 Zero-Risk Project Definition
-We offer a free 30-minute initial consultation. Should you decide to move forward, we'll invest further time at no cost to fully define and scope the project and get to signing the contract.
+We offer a free 30-minute initial consultation. Should you decide to move forward, we'll invest further time at no cost to you for us to define the deliverable work product.
 
 Confidentiality & Compliance
 We sign your NDA and MS documents consisting of industry-standard and reasonable custom terms, without any questions asked. We employ zero tolerance for violations of confidentiality and data privacy by anyone at DATASCIENCEGT. This comes naturally to us after working for highly-regulated finance, healthcare, and social media FTC-regulated companies.
@@ -10,7 +10,7 @@ Project-Based Pricing
 Your cost is certain. We price projects, not hours, so you know the full cost up front and never have to watch the clock.
 
 No Prepayment Required
-We trust our work. You pay when we start delivering, not before. Project milestones and payment-term timelines will be negotiated in good faith and to mutual satisfaction.
+We trust our work. You pay when we start delivering, not before. Every project milestone will have a defined work product, and you will only be invoiced to pay when that specific work product is delivered.
 
 Flexible Payment Terms
 We offer NET 45 payment terms for any accrued fees, giving you peace of mind and sufficient time to process invoices.
@@ -20,3 +20,6 @@ We can sign directly with you or subcontract under your preferred vendor, easing
 
 Knowledge Transfer
 We don't deliver a solution that locks you in with DATASCIENCEGT. We actively train, mentor, and groom your own team through our work so they can confidently carry the torch forward. WE aim to add further value through new scope projects.
+
+Widely Used Technology Stacks
+We use first-class open-source technologies and cloud Services so as not to lock you into proprietary ongoing, unnecessary, and expensive license fees
