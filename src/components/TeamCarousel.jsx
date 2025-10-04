@@ -221,7 +221,7 @@ function FullscreenModal({ member, onClose }) {
   const overlay = (
     <div
       id="team-modal-root"
-      className="fixed inset-0 z-[99999] bg-[#1A1A1A] overflow-y-auto"
+      className="fixed inset-0 z-[99999] bg-[#1A1A1A]/95 overflow-y-auto"
       role="dialog"
       aria-modal="true"
     >

@@ -25,13 +25,13 @@ export default function TestimonialsCarousel({ items = [], showTitle = true }) {
   const DATA = (items && items.length
     ? items
     : [
-        {
-          quote:
-            "Working with the team at DataScienceGT was a game-changer. They translated our messy data into decisions.",
-          author: "Anonymous",
-          title: "They translated our messy data into decisions.",
-        },
-      ]).map((it) => ({ ...it }));
+      {
+        quote:
+          "Working with the team at DataScienceGT was a game-changer. They translated our messy data into decisions.",
+        author: "Anonymous",
+        title: "They translated our messy data into decisions.",
+      },
+    ]).map((it) => ({ ...it }));
 
   const closeModal = () => setExpandedIdx(null);
 
@@ -204,19 +204,19 @@ function TestimonialCard({ item, showTitle, compactMasked = false }) {
             style={
               compactMasked
                 ? {
-                    overflow: "hidden",
-                    wordBreak: "break-word",
-                    hyphens: "auto",
-                    WebkitMaskImage:
-                      "linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)",
-                    maskImage:
-                      "linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)",
-                  }
+                  overflow: "hidden",
+                  wordBreak: "break-word",
+                  hyphens: "auto",
+                  WebkitMaskImage:
+                    "linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)",
+                  maskImage:
+                    "linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)",
+                }
                 : {
-                    overflow: "visible",
-                    wordBreak: "break-word",
-                    hyphens: "auto",
-                  }
+                  overflow: "visible",
+                  wordBreak: "break-word",
+                  hyphens: "auto",
+                }
             }
           >
             <p className="text-[15px] leading-relaxed whitespace-normal">
@@ -236,14 +236,7 @@ function ExpandedTestimonial({ item, showTitle, onClose }) {
 
   return (
     <div className="relative w-full max-w-[95vw] sm:max-w-3xl bg-neutral-900 text-white rounded-2xl border border-white/10 shadow-2xl overflow-hidden">
-      <button
-        type="button"
-        onClick={onClose}
-        className="absolute right-3 top-3 z-10 h-9 w-9 inline-flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 border border-white/20"
-        aria-label="Close"
-      >
-        <CloseX />
-      </button>
+
 
       <div className="flex flex-col md:flex-row">
         {/* Image left */}
@@ -251,16 +244,28 @@ function ExpandedTestimonial({ item, showTitle, onClose }) {
           <img src={photo} alt="" className="h-full w-full object-contain" />
         </div>
         {/* Text */}
-        <div className="p-5 md:p-6 flex-1">
-          {showTitle && first ? (
-            <h3 className="font-semibold text-lg md:text-xl leading-snug mb-3">
-              {first}
-            </h3>
-          ) : null}
-          <div className="text-[15px] leading-relaxed whitespace-pre-wrap">
-            {quote}
+        <div className="flex flex-row">
+          <div className="p-5 md:p-5 flex-1">
+            {showTitle && first ? (
+              <h3 className="font-semibold text-lg md:text-xl leading-snug mb-3">
+                {first}
+              </h3>
+            ) : null}
+            <div className="text-[15px] leading-relaxed whitespace-pre-wrap">
+              {quote}
+            </div>
+            {author ? <div className="mt-4 text-sm text-white/70">— {author}</div> : null}
           </div>
-          {author ? <div className="mt-4 text-sm text-white/70">— {author}</div> : null}
+          <div className="flex justify-end pt-2 pr-2">
+            <button
+              type="button"
+              onClick={onClose}
+              className="z-10 h-9 w-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 border border-white/20"
+              aria-label="Close"
+            >
+              <CloseX />
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -296,21 +301,21 @@ function Modal({ children, onClose }) {
 function ChevronLeft() {
   return (
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path d="M15 6l-6 6 6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M15 6l-6 6 6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
 function ChevronRight() {
   return (
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
 function CloseX() {
   return (
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+      <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
     </svg>
   );
 }
