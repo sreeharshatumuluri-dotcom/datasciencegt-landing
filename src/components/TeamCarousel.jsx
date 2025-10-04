@@ -89,7 +89,7 @@ function useBodyScrollLock(isOpen) {
 
 export default function TeamCarousel() {
   const [openIdx, setOpenIdx] = useState(null);
-  const [activeIdx, setActiveIdx] = useState(null);
+  const [activeIdx, setActiveIdx] = useState(0);
   const [swiperRef, setSwiperRef] = useState(null);
   useBodyScrollLock(openIdx !== null);
 
@@ -161,6 +161,7 @@ export default function TeamCarousel() {
             slideShadows: true,
           }}
           onSwiper={setSwiperRef}
+          onSlideChange={(swiper) => setActiveIdx(swiper?.activeIndex)}
           pagination={{ clickable: true }}
         >
           {TEAM.map((m, i) => (
@@ -190,7 +191,7 @@ function Slide({ m, onOpen }) {
   const { short } = truncateBySentences(m.desc, 4);
 
   return (
-    <div className="w-[min(85vw,400px)]">
+    <div className="w-[min(85vw,400px)]" onClick={onOpen} >
       <button
         type="button"
         onClick={onOpen}
