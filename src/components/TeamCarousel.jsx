@@ -89,6 +89,8 @@ function useBodyScrollLock(isOpen) {
 
 export default function TeamCarousel() {
   const [openIdx, setOpenIdx] = useState(null);
+  const [activeIdx, setActiveIdx] = useState(null);
+  const [swiperRef, setSwiperRef] = useState(null);
   useBodyScrollLock(openIdx !== null);
 
   useEffect(() => {
@@ -114,7 +116,7 @@ export default function TeamCarousel() {
         }
 
         .team-swiper .swiper-pagination-bullet {
-          background: rgba(59, 130, 246, 0.35);
+          background: rgba(255, 255, 255, 0.88);
           transition: all .3s ease 0s; border-radius: 8px;
         }
         .team-swiper .swiper-pagination-bullet-active { background:#3b82f6; width: 30px; }
@@ -158,11 +160,19 @@ export default function TeamCarousel() {
             modifier: 1,
             slideShadows: true,
           }}
+          onSwiper={setSwiperRef}
           pagination={{ clickable: true }}
         >
           {TEAM.map((m, i) => (
             <SwiperSlide key={i}>
-              <Slide m={m} onOpen={() => setOpenIdx(i)} />
+              <Slide m={m} onOpen={() => {
+                if (activeIdx !== i) {
+                  setActiveIdx(i)
+                  swiperRef?.slideTo(i)
+                } else {
+                  setOpenIdx(i)
+                }
+              }} />
             </SwiperSlide>
           ))}
         </Swiper>

@@ -109,14 +109,14 @@ function About() {
                 business unit head for products and cloud services that generated tens of millions in annual
                 revenue. Throughout his career, he deployed the best blend of technical expertise and business
                 skills to add distinct and unique value. <br />
-                <div className="mt-1">
+                <>
                   At DATASCIENCEGT, Gopala brings together the same blend
                   to deliver value to the company's clients. He has also built a team and trained them to be
                   laser-focused on value delivery through high-quality technical work. Gopala holds three master's
                   degrees - a Master's degree in data science from the University of California, Berkeley, an MBA
                   from Carnegie Mellon University, and an MS in computer science from the University of Kentucky.
                   You can win with him and his team.
-                </div>
+                </>
               </>
             }
             imageSrc={approachImg}
